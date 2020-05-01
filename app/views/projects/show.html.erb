@@ -16,4 +16,6 @@
 <br>
 <%= link_to "Home Page", root_path %>
 <br>
+<%= link_to "modifier", edit_project_path(@project) %>
+<br>
 <%= link_to "supprimer", project_path(@project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} %>

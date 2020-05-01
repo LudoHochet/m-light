@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :destroy]
+  before_action :set_project, only: [:show, :destroy, :edit, :update]
 
   def new
     @project = Project.new
@@ -15,6 +15,14 @@ class ProjectsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    @project.update(params_projects)
+    redirect_to project_path(@project)
   end
 
   def destroy
