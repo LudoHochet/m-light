@@ -10,6 +10,8 @@
 <% if @project.photos.attached? %>
   <% @project.photos.each do |photo| %>
     <%= cl_image_tag photo.key , height: 300, width: 400, crop: :fill  %>
+    <%= photo.id %>
+    <%#= link_to "delete image", photo.purge %>
   <% end %>
 <% end %>
 
