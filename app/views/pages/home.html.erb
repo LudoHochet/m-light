@@ -2,9 +2,40 @@
 <%= link_to "ajouter un projet", new_project_path %>
 <br>
 <br>
-<ul>
-  <% @projects.each do |project| %>
-    <li><%= link_to "#{project.name}", project_path(project) %> ---- <%= link_to "modifier", edit_project_path(project)  %> --- <%= link_to "supprimer", project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} %></li>
-  <% end %>
-</ul>
+  <div>
+    <h6>TV</h6>
+    <ul>
+      <% @tvs.each do |project| %>
+        <li><%= link_to "#{project.name}", project_path(project) %> ---- <%= link_to "modifier", edit_project_path(project)  %> --- <%= link_to "supprimer", project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} %></li>
+      <% end %>
+    </ul>
+  </div>
 
+
+  <div>
+    <h6>Mode</h6>
+    <ul>
+      <% @modes.each do |project| %>
+        <li><%= link_to "#{project.name}", project_path(project) %> ---- <%= link_to "modifier", edit_project_path(project)  %> --- <%= link_to "supprimer", project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} %></li>
+      <% end %>
+    </ul>
+  </div>
+
+
+  <div>
+    <h6>Events</h6>
+    <ul>
+      <% @events.each do |project| %>
+        <li><%= link_to "#{project.name}", project_path(project) %> ---- <%= link_to "modifier", edit_project_path(project)  %> --- <%= link_to "supprimer", project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div>
+    <h6>Live</h6>
+    <ul>
+      <% @lives.each do |project| %>
+        <li><%= link_to "#{project.name}", project_path(project) %> ---- <%= link_to "modifier", edit_project_path(project)  %> --- <%= link_to "supprimer", project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} %></li>
+      <% end %>
+    </ul>
+  </div>
