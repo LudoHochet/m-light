@@ -1,0 +1,11 @@
+<h1>Nouveau projet</h1>
+
+<%= simple_form_for @project do |f| %>
+  <%= f.input :name %>
+  <%= f.input :category, collection: Project::CATEGORY %>
+  <%= f.input :date %>
+  <%= f.input :location %>
+  <%= f.input :description %>
+  <%= f.input :photos, as: :file, input_html: {multiple: true} %>
+  <%= f.submit %>
+<% end %>
