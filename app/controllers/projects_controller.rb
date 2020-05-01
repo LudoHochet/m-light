@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @illustration = Illustration.new
   end
 
   def edit

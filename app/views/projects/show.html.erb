@@ -9,7 +9,15 @@
 
 <% if @project.photos.attached? %>
   <% @project.photos.each do |photo| %>
-    <%= cl_image_tag photo.key , height: 300, width: 400, crop: :fill  %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill  %>
+    <%#= link_to "delete image", photo.purge %>
+  <% end %>
+<% end %>
+<% if @project.illustrations %>
+  <% @project.illustrations.each do |illustration| %>
+    <% illustration.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
   <% end %>
 <% end %>
 
@@ -19,3 +27,12 @@
 <%= link_to "modifier", edit_project_path(@project) %>
 <br>
 <%= link_to "supprimer", project_path(@project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} %>
+<br>
+<br>
+<h3>Ajouter des photos</h3>
+<%= simple_form_for [@project, @illustration] do |f| %>
+  <%= f.input :photos, as: :file, input_html: {multiple: true}  %>
+  <%= f.submit "Ajouter" %>
+<% end %>
+<br>
+<br>
