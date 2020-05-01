@@ -23,6 +23,8 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 #generate fake seeds
 gem 'faker'
+#upload photos
+gem 'cloudinary', '~> 1.12.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
