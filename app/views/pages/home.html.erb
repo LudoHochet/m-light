@@ -1,8 +1,10 @@
 <h1>All Projects</h1>
 <%= link_to "ajouter un projet", new_project_path %>
+<br>
+<br>
 <ul>
   <% @projects.each do |project| %>
-    <li><%= project.name %></li>
+    <li><%= link_to "#{project.name}", project_path(project) %> ---- <%= link_to "supprimer", project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} %></li>
   <% end %>
 </ul>
 

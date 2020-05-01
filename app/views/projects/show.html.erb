@@ -1,0 +1,19 @@
+<h1><%= @project.name %></h1>
+
+<ul>
+  <li> <%= @project.category %> </li>
+  <li> <%= @project.date %> </li>
+  <li> <%= @project.location %> </li>
+  <li> <%= @project.description %> </li>
+</ul>
+
+<% if @project.photos.attached? %>
+  <% @project.photos.each do |photo| %>
+    <%= cl_image_tag photo.key , height: 300, width: 400, crop: :fill  %>
+  <% end %>
+<% end %>
+
+<br>
+<%= link_to "Home Page", root_path %>
+<br>
+<%= link_to "supprimer", project_path(@project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} %>
