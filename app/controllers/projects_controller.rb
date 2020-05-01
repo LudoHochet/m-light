@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :destroy, :edit, :update]
+  before_action :set_project, only: [:show, :destroy, :edit, :update, :delete_photo_attachment]
 
   def new
     @project = Project.new
@@ -31,6 +31,13 @@ class ProjectsController < ApplicationController
     redirect_to root_path
   end
 
+  def delete_photo_attachment
+    raise
+    @photo = @project.photos.find(params[:format])
+    @photo.purge
+    redirect_to project_path(@project), notice: 'Photo supprimée'
+  end
+
   private
 
   def set_project
@@ -41,4 +48,7 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:category, :name, :date, :location, :description, photos: [])
   end
 end
+
+
+​
 

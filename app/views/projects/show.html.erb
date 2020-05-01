@@ -8,16 +8,38 @@
 </ul>
 
 <% if @project.photos.attached? %>
-  <% @project.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill  %>
+  <%# @project.photos.each do |photo| %>
+    <%#= cl_image_tag photo.key, height: 300, width: 400, crop: :fill  %>
     <%#= link_to "delete image", photo.purge %>
+  <%# end %>
+
+  <% @project.photos.each do |photo| %>
+      <div class="project-show-card__image">
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <%= link_to delete_photo_attachment_project_path(@project, photo),
+        method: :delete,
+        data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+        <p>❌</p>
+      <% end %>
+    </div>
   <% end %>
+
 <% end %>
+
 <% if @project.illustrations %>
   <% @project.illustrations.each do |illustration| %>
+
+
     <% illustration.photos.each do |photo| %>
       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <%= link_to delete_photo_attachment_project_illustration_path(@project, illustration, photo),
+        method: :delete,
+        data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+        <p>❌</p>
+      <% end %>
+
     <% end %>
+
   <% end %>
 <% end %>
 
@@ -36,3 +58,4 @@
 <% end %>
 <br>
 <br>
+
