@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :destroy, :edit, :update, :delete_photo_attachment]
+  skip_before_action :authenticate_user!, only: [:show]
 
   def new
     @project = Project.new
