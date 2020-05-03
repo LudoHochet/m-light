@@ -33,7 +33,6 @@ class ProjectsController < ApplicationController
   end
 
   def delete_photo_attachment
-    raise
     @photo = @project.photos.find(params[:format])
     @photo.purge
     redirect_to project_path(@project), notice: 'Photo supprimée'
