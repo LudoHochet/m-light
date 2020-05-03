@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!
 
   def home
     if params[:query].present?
@@ -11,5 +11,9 @@ class PagesController < ApplicationController
       @events = Project.where(category: "Events")
       @lives = Project.where(category: "Live")
     end
+  end
+
+  def contact
+    @contact = Contact.new
   end
 end
