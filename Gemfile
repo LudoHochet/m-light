@@ -27,6 +27,8 @@ gem 'faker'
 gem 'cloudinary', '~> 1.12.0'
 # search bar
 gem 'pg_search', '~> 2.3.0'
+# testing delivery mail
+gem 'letter_opener', group: :development
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
