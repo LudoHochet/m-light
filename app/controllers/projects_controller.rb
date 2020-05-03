@@ -48,7 +48,3 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:category, :name, :date, :location, :description, photos: [])
   end
 end
-
-
-​
-
