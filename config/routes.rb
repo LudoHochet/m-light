@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get 'contacts/create'
   devise_for :users
   root to: 'pages#home'
   get '/contact', to: 'pages#contact'
+  resources :contacts, only: [:create]
   resources :projects do
     member do
       delete :delete_photo_attachment
