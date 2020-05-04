@@ -1,12 +1,144 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar-mlight {
+  background-color: white;
+  padding: 10px 30px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.logo a {
+  // font-family: 'Kaushan Script', cursive;
+  font-family: 'Staatliches', cursive;
+  color: black;
+  opacity: 0.9;
+  font-size: 20px;
+  &:hover {
+    opacity: 1;
+    color: black;
+    text-decoration: none;
+  }
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-mlight p {
+  font-weight: lighter;
+  margin-bottom: 0;
 }
+
+.icon-session {
+ margin-left: 1rem;
+ opacity: 0.6;
+ &:hover {
+  cursor: pointer;
+  opacity: 1;
+  transition: 1s;
+ }
+}
+
+.links {
+  font-family: 'Staatliches', cursive;
+  color: black;
+  opacity: 0.6;
+  // transform: scaleX(0);
+  // transition: transform 250ms ease-in-out;
+  &:hover {
+    text-decoration: none;
+    color: black;
+    opacity: 1;
+    transition: 1s;
+  }
+}
+
+.icon-session a {
+  color:rgba(30,30,30,0.6);
+  &:hover {
+    text-decoration: none;
+    color:black;
+  }
+}
+
+// .activelinks {
+//   -webkit-transform: translateZ(0);
+//   position: relative;
+//    &:before {
+//     content: "";
+//     position: absolute;
+//     z-index: -1;
+//     bottom: 0;
+//     background: black;
+//     height: 2px;
+//     left: 0;
+//     right: 0;
+//   }
+// }
+
+
+// .underline-from-center {
+//   -webkit-transform: translateZ(0);
+//   transform: translateZ(0);
+//   -webkit-backface-visibility: hidden;
+//   backface-visibility: hidden;
+//   -moz-osx-font-smoothing: grayscale;
+//   position: relative;
+//   overflow: hidden;
+//   &:before {
+//     content: "";
+//     position: absolute;
+//     z-index: -1;
+//     left: 50%;
+//     right: 50%;
+//     bottom: 0;
+//     background: black;
+//     height: 2px;
+//     -webkit-transition-property: left right;
+//     transition-property: left right;
+//     -webkit-transition-duration: 0.3s;
+//     transition-duration: 0.3s;
+//     -webkit-transition-timing-function: ease-out;
+//     transition-timing-function: ease-out;
+//   }
+//   &:hover:before {
+//     left: 0;
+//     right: 0;
+//     text-decoration: none;
+//   }
+// }
+
+.hidden-links {
+  display: none;
+}
+
+.hidden-new-article {
+  display: none;
+}
+
+
+@media (max-width: 992px) {
+  .navbar-bbgc img {
+    width: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .new-article {
+    display: none;
+  }
+  .hidden-new-article {
+    display: block;
+  }
+  .navbar-bbgc img {
+    width: 80px;
+  }
+}
+
+@media (max-width: 576px) {
+  .links {
+    display: none;
+  }
+  .activelinks {
+    display: none;
+  }
+  .hidden-links{
+    display: block;
+  }
+  .navbar-bbgc img {
+    width: 60px;
+  }
+}
+
