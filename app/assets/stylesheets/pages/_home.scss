@@ -1,55 +1,38 @@
 // Specific CSS for your home-page
-.scrolling-wrapper {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
 
-  .card {
-    display: inline-block;
-  }
-}
+// test pour scroll horizontal
 
-.card {
-  border: 2px solid $red;
-  width: 150px;
-  height: 75px;
-  background: black;
-  &:hover {
-    width: 200px;
-    height: 125px;
-    transition: 1s;
-  }
-}
+// .scrolling-wrapper {
+//   overflow-x: scroll;
+//   overflow-y: hidden;
+//   white-space: nowrap;
 
-.scrolling-wrapper {
-  height: 80px;
-  margin-bottom: 20px;
-  width: 100%;
-  -webkit-overflow-scrolling: touch;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
+//   .card {
+//     display: inline-block;
+//   }
+// }
+
+// .card {
+//   border: 2px solid $red;
+//   width: 150px;
+//   height: 75px;
+//   background: black;
+//   &:hover {
+//     width: 200px;
+//     height: 125px;
+//     transition: 1s;
+//   }
+// }
+
+// .scrolling-wrapper {
+//   height: 80px;
+//   margin-bottom: 20px;
+//   width: 100%;
+//   -webkit-overflow-scrolling: touch;
+//   &::-webkit-scrollbar {
+//     display: none;
+//   }
+// }
 
 
-.banner {
-  background-size: cover;
-  background-position: center;
-  padding: 150px 0;
-  height: 100vh;
-}
 
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
