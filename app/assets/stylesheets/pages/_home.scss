@@ -36,7 +36,9 @@
 
 
 .cards {
-  display: grids;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
   grid-gap: 16px;
+  flex-grow: 1;
 }

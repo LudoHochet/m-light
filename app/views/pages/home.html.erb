@@ -13,18 +13,33 @@
   <%#= submit_tag "Search", class: "btn btn-primary" %>
 <%# end %>
 <!-- end search zone -->
-
-<!-- result of search -->
+<div class="container">
   <% if @projects %>
     <div class="cards">
       <% @projects.each do |project| %>
-        <%= link_to "#{project.name}", project_path(project) %>
+        <% if project.photos.attached? %>
+          <div class="card-project" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path project.photos.first.key %>');">
+            <p><%= link_to "#{project.name}", project_path(project) %></p>
+          </div>
+        <% else %>
+          <div class="card-project" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path project.illustrations.first.photos.first.key %>');">
+             <p><%= link_to "#{project.name}", project_path(project) %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %> <!-- end of if @projects -->
+</div> <!-- end of container -->
+
+
             <%# if user_signed_in? %>
               <%#= link_to "modifier", edit_project_path(project)  %>
               <%#= link_to "supprimer", project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} %>
             <%# end %>
-      <% end %>
-    </div>
+
+
+
+<!-- result of search -->
 
   <%# else %>
 <!-- project by category -->
@@ -80,7 +95,6 @@
       </ul>
     </div>
  -->
-  <% end %> <!-- end of if @projects -->
 
 <!-- essai pour scroll horizontal -->
     <!-- <div class="container">
