@@ -4,16 +4,16 @@
 <%#= link_to "ajouter un projet", new_project_path %>
 
 
-<!-- <div class="container"> -->
-  <%# if @projects %>
+<div class="container">
+  <% if @projects %>
     <!-- <div class="cards"> -->
-      <%# @projects.each do |project| %>
-        <%# if project.photos.attached? %>
-          <%#= link_to project_path(project) do %>
-            <!-- <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%#= cl_image_path project.photos.first.key %>');"> -->
-              <!-- <p class="project-name"><%#= project.name %></p> -->
-            <!-- </div> -->
-          <%# end %>
+      <% @projects.each do |project| %>
+        <% if project.photos.attached? %>
+          <%= link_to project_path(project) do %>
+            <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path project.photos.first.key %>');">
+              <p class="project-name"><%= project.name %></p>
+            </div>
+          <% end %>
         <%# else %>
           <%# if project.illustrations %>
             <%#= link_to project_path(project) do %>
@@ -28,11 +28,11 @@
               <!-- </div> -->
             <%# end %>
           <%# end %>
-        <%# end %>
-      <%# end %>
+        <% end %>
+      <% end %>
     <!-- </div> -->
-  <!-- <%# end %> end of if @projects -->
-<!-- </div> end of container -->
+  <% end %>
+</div>
 
 
 
@@ -43,10 +43,10 @@
 
 
 
-<!-- result of search -->
+<!-- result of search
 
   <%# else %>
-<!-- project by category -->
+<!-project by category -->
     <!-- <div>
       <h6>TV</h6>
       <ul>
