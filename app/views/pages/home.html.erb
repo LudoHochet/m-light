@@ -18,11 +18,11 @@
     <div class="cards">
       <% @projects.each do |project| %>
         <% if project.photos.attached? %>
-          <div class="card-project" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path project.photos.first.key %>');">
+          <div class="card-project draw meet" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path project.photos.first.key %>');">
             <p><%= link_to "#{project.name}", project_path(project) %></p>
           </div>
         <% else %>
-          <div class="card-project" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path project.illustrations.first.photos.first.key %>');">
+          <div class="card-project draw meet" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path project.illustrations.first.photos.first.key %>');">
              <p><%= link_to "#{project.name}", project_path(project) %></p>
           </div>
         <% end %>

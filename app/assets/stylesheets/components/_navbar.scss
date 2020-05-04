@@ -1,17 +1,17 @@
 .navbar-mlight {
-  background-color: white;
+  background-color: $black;
   padding: 10px 30px;
 }
 
 .logo a {
   // font-family: 'Kaushan Script', cursive;
   font-family: 'Staatliches', cursive;
-  color: black;
+  color: white;
   opacity: 0.9;
   font-size: 20px;
   &:hover {
     opacity: 1;
-    color: black;
+    color: white;
     text-decoration: none;
   }
 }
@@ -22,6 +22,7 @@
 }
 
 .icon-session {
+ color: white;
  margin-left: 1rem;
  opacity: 0.6;
  &:hover {
@@ -33,13 +34,13 @@
 
 .links {
   font-family: 'Staatliches', cursive;
-  color: black;
+  color: white;
   opacity: 0.6;
   // transform: scaleX(0);
   // transition: transform 250ms ease-in-out;
   &:hover {
     text-decoration: none;
-    color: black;
+    color: white;
     opacity: 1;
     transition: 1s;
   }
@@ -49,7 +50,7 @@
   color:rgba(30,30,30,0.6);
   &:hover {
     text-decoration: none;
-    color:black;
+    color:white;
   }
 }
 
