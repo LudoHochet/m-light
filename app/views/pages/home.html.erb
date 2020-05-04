@@ -15,7 +15,7 @@
             </div>
           <% end %>
         <%# else %>
-          <%# if project.illustrations %>
+          <%# if project.illustrations.any? %>
             <%#= link_to project_path(project) do %>
               <!-- <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%#= cl_image_path project.illustrations.first.photos.first.key %>');"> -->
                 <!-- <p class="project-name"><%#= project.name %></p> -->
