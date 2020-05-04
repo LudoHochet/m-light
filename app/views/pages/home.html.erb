@@ -3,29 +3,20 @@
 <!-- <h1>All Projects</h1> -->
 <%#= link_to "ajouter un projet", new_project_path %>
 
-<!-- search zone -->
-<%#= form_tag root_path, method: :get do %>
-  <%#= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a project"
-  %>
-  <%#= submit_tag "Search", class: "btn btn-primary" %>
-<%# end %>
-<!-- end search zone -->
+
 <div class="container">
   <% if @projects %>
     <div class="cards">
       <% @projects.each do |project| %>
         <% if project.photos.attached? %>
           <%= link_to project_path(project) do %>
-            <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path project.photos.first.key %>');">
+            <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path project.photos.first.key %>');">
               <p class="project-name"><%= project.name %></p>
             </div>
           <% end %>
         <% else %>
           <%= link_to project_path(project) do %>
-            <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path project.illustrations.first.photos.first.key %>');">
+            <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path project.illustrations.first.photos.first.key %>');">
               <p class="project-name"><%= project.name %></p>
             </div>
           <% end %>

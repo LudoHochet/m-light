@@ -29,9 +29,3 @@ const resetOpacity = () => {
 
 export { revealName };
 export { resetOpacity };
-
-// document.querySelectorAll("img").forEach((img) => {
-//   img.addEventListener("click", (event) => {
-//     event.currentTarget.classList.toggle("img-circle");
-//   });
-// });
