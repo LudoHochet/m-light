@@ -7,18 +7,19 @@
   align-items: center;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-//
-  box-shadow: inset 0 0 0 2px $black;
-  box-sizing: border-box;
+
+  // box-shadow: inset 0 0 0 2px $black;
+  // box-sizing: border-box;
   position: relative;
-  vertical-align: middle;
+  // vertical-align: middle;
   &::before,
   &::after {
-    box-sizing: inherit;
+    // box-sizing: inherit;
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
+    z-index: 0;
   }
 }
 
@@ -28,7 +29,7 @@
   &::before,
   &::after {
     // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
-    border: 2px solid transparent;
+    border: 4px solid transparent;
     width: 0;
     height: 0;
   }
@@ -45,78 +46,79 @@
     right: 0;
   }
 
-  // &:hover {
-  //   color: $cyan;
-  // }
+  &:hover {
+    color: white;
+  }
 
   // Hover styles
   &:hover::before,
   &:hover::after {
     width: 100%;
-    height: 100%;
+    height: 50%;
   }
 
   &:hover::before {
-    // border-top-color: $cyan; // Make borders visible
-    // border-right-color: $cyan;
+    border-top-color: white; // Make borders visible
+    border-right-color: white;
     transition:
       width 0.25s ease-out, // Width expands first
       height 0.25s ease-out 0.25s; // And then height
   }
 
   &:hover::after {
-    // border-bottom-color: $cyan; // Make borders visible
-    // border-left-color: $cyan;
+    border-bottom-color: white; // Make borders visible
+    border-left-color: white;
     transition:
       border-color 0s ease-out 0.5s, // Wait for ::before to finish before showing border
-      width 0.25s ease-out 0.5s, // And then exanding width
-      height 0.25s ease-out 0.75s; // And finally height
+      height 0.25s ease-out 0.75s, // And finally height
+      width 0.25s ease-out 0.5s; // And then exanding width
   }
 }
 
-// Inherits from .draw
-.meet {
+// // Inherits from .draw
+// // .meet {
 
-  &:hover {
-    color: $white;
-  }
+// //   &:hover {
+// //     color: $white;
+// //   }
 
-  // Start ::after in same position as ::before
-  &::after {
-    top: 0;
-    left: 0;
-  }
+// //   // Start ::after in same position as ::before
+// //   &::after {
+// //     top: 0;
+// //     left: 0;
+// //   }
 
-  // Change colors
-  &:hover::before {
-    border-top-color: $white;
-    border-right-color: $white;
-  }
+// //   // Change colors
+// //   &:hover::before {
+// //     border-top-color: $white;
+// //     border-right-color: $white;
+// //   }
 
-  &:hover::after {
-    border-bottom-color: $white;
-    border-left-color: $white;
-    transition: // Animate height first, then width
-      height 0.25s ease-out,
-      width 0.25s ease-out 0.25s;
-  }
-
-}
+// //   &:hover::after {
+// //     border-bottom-color: $white;
+// //     border-left-color: $white;
+// //     transition: // Animate height first, then width
+// //       height 0.25s ease-out,
+// //       width 0.25s ease-out 0.25s;
+// //   }
 
 
 
-.card-project a {
-  color: white;
-  &:hover {
-    text-decoration: none;
-  }
-}
+
+
+
 
 .card-project p {
+  color:white;
   font-size: 18px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-family: 'Staatliches', cursive;
   letter-spacing: 2px;
   margin-bottom: 0;
+  text-decoration:none;
+  // opacity: 0;
+  &:hover {
+    text-decoration: none;
+  }
 }
