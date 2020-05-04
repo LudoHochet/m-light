@@ -6,9 +6,11 @@ const revealName = () => {
         cards.forEach((card) => {
           card.classList.remove('lighter');
           card.classList.add('darker');
+          card.children[0].style.visibility = "hidden";
         });
         event.currentTarget.classList.remove('darker');
         event.currentTarget.classList.add('lighter');
+        event.currentTarget.children[0].style.visibility = "visible";
       });
     });
   }
@@ -22,6 +24,7 @@ const resetOpacity = () => {
       cards.forEach((card) => {
         card.classList.remove('darker');
         card.classList.add('lighter');
+        card.children[0].style.visibility = "hidden";
       });
     });
   }
