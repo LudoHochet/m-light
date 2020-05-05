@@ -1,17 +1,22 @@
+.show-project{
+  margin-top:80px;
+}
+
 .show-project img {
   width: auto;
-  height: 100vh;
+  height: calc(100vh - 30px);
 }
 .show-image {
   position: relative;
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.infos {
-  margin-top: 30px;
-}
+// .infos {
+//   position: fixed;
+//   z-index: 100;
+// }
 
 .thin {
   font-weight: 100;

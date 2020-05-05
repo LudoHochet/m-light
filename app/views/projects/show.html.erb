@@ -16,8 +16,10 @@
     <% @project.photos.each do |photo| %>
       <div class="show-image">
         <%= cl_image_tag photo.key %>
-        <%= link_to delete_photo_attachment_project_path(@project, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
-          <i class="far fa-times-circle delete-photo"></i>
+        <% if user_signed_in? %>
+          <%= link_to delete_photo_attachment_project_path(@project, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+            <i class="far fa-times-circle delete-photo"></i>
+          <% end %>
         <% end %>
       </div>
     <% end %>
@@ -28,8 +30,10 @@
       <% illustration.photos.each do |photo| %>
         <div class="show-image">
           <%= cl_image_tag photo.key %>
-          <%= link_to delete_photo_attachment_project_illustration_path(@project, illustration, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
-            <i class="far fa-times-circle delete-photo"></i>
+          <% if user_signed_in? %>
+            <%= link_to delete_photo_attachment_project_illustration_path(@project, illustration, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+              <i class="far fa-times-circle delete-photo"></i>
+            <% end %>
           <% end %>
         </div>
       <% end %>
@@ -41,9 +45,7 @@
 
 <%= link_to "modifier", edit_project_path(@project) %>
 <br>
-<%= link_to "supprimer", project_path(@project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} %>
-<br>
-<br>
+
 <h3>Ajouter des photos</h3>
 <%= simple_form_for [@project, @illustration] do |f| %>
   <%= f.input :photos, as: :file, input_html: {multiple: true}  %>
