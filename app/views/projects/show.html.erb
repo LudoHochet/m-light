@@ -6,16 +6,15 @@
   <li> <%= @project.location %> </li>
   <li> <%= @project.description %> </li>
 </ul>
-
+<div class="container show-project">
 <% if @project.photos.attached? %>
   <%# @project.photos.each do |photo| %>
     <%#= cl_image_tag photo.key, height: 300, width: 400, crop: :fill  %>
     <%#= link_to "delete image", photo.purge %>
   <%# end %>
-
   <% @project.photos.each do |photo| %>
       <div class="project-show-card__image">
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag photo.key %>
       <%= link_to delete_photo_attachment_project_path(@project, photo),
         method: :delete,
         data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
@@ -31,7 +30,7 @@
 
 
     <% illustration.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag photo.key %>
       <%= link_to delete_photo_attachment_project_illustration_path(@project, illustration, photo),
         method: :delete,
         data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
@@ -42,6 +41,10 @@
 
   <% end %>
 <% end %>
+
+</div>
+
+
 
 <br>
 <%= link_to "Home Page", root_path %>
