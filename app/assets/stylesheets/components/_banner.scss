@@ -3,21 +3,24 @@
   background-position: center;
   padding: 150px 0;
   height: 80vh;
-  // width: auto;
 }
 
 .banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  // font-weight: bold;
   font-size: 88px;
   letter-spacing: 3px;
 }
 
 .banner p {
   font-size: 20px;
-  color: white;
-  opacity: .7;
+  color: rgba(255,255,255,0.7);
+  font-weight: lighter;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner span {
+  font-family: 'Staatliches', cursive;
+  color: rgba(255,255,255,1);
 }
