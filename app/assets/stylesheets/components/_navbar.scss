@@ -1,7 +1,7 @@
 .navbar-mlight {
   background-color: $black;
   padding: 10px 30px;
-  position: relative;
+  // position: relative;
   border-bottom: 1px solid white;
 }
 
@@ -38,8 +38,6 @@
   font-family: 'Staatliches', cursive;
   color: white;
   opacity: 0.6;
-  // transform: scaleX(0);
-  // transition: transform 250ms ease-in-out;
   &:hover {
     text-decoration: none;
     color: white;

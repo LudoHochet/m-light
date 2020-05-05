@@ -1,54 +1,44 @@
-<h1><%= @project.name %></h1>
-
-<ul>
-  <li> <%= @project.category %> </li>
-  <li> <%= @project.date %> </li>
-  <li> <%= @project.location %> </li>
-  <li> <%= @project.description %> </li>
-</ul>
 <div class="container show-project">
-<% if @project.photos.attached? %>
-  <%# @project.photos.each do |photo| %>
-    <%#= cl_image_tag photo.key, height: 300, width: 400, crop: :fill  %>
-    <%#= link_to "delete image", photo.purge %>
-  <%# end %>
-  <% @project.photos.each do |photo| %>
-      <div class="project-show-card__image">
-      <%= cl_image_tag photo.key %>
-      <%= link_to delete_photo_attachment_project_path(@project, photo),
-        method: :delete,
-        data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
-        <p>❌</p>
-      <% end %>
+  <div class="infos d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-between align-items-center">
+      <h5 class="mb-0"><%= @project.name %></h5>
+      <p class="mb-0 mx-2"> - </p>
+      <p class="mb-0 thin"><%= @project.date %></p>
+      <p class="mb-0 mx-2"> - </p>
+      <p class="mb-0 thin"><%= @project.location %></p>
     </div>
-  <% end %>
+    <div>
+      <p class="mb-0 thin"><%= @project.description %></p>
+    </div>
+  </div>
 
-<% end %>
-
-<% if @project.illustrations %>
-  <% @project.illustrations.each do |illustration| %>
-
-
-    <% illustration.photos.each do |photo| %>
-      <%= cl_image_tag photo.key %>
-      <%= link_to delete_photo_attachment_project_illustration_path(@project, illustration, photo),
-        method: :delete,
-        data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
-        <p>❌</p>
-      <% end %>
-
+  <% if @project.photos.attached? %>
+    <% @project.photos.each do |photo| %>
+      <div class="show-image">
+        <%= cl_image_tag photo.key %>
+        <%= link_to delete_photo_attachment_project_path(@project, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+          <i class="far fa-times-circle delete-photo"></i>
+        <% end %>
+      </div>
     <% end %>
-
   <% end %>
-<% end %>
 
-</div>
+  <% if @project.illustrations %>
+    <% @project.illustrations.each do |illustration| %>
+      <% illustration.photos.each do |photo| %>
+        <div class="show-image">
+          <%= cl_image_tag photo.key %>
+          <%= link_to delete_photo_attachment_project_illustration_path(@project, illustration, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+            <i class="far fa-times-circle delete-photo"></i>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div> <!-- fin du container -->
 
 
 
-<br>
-<%= link_to "Home Page", root_path %>
-<br>
 <%= link_to "modifier", edit_project_path(@project) %>
 <br>
 <%= link_to "supprimer", project_path(@project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} %>
