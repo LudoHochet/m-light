@@ -2,6 +2,7 @@
   background-color: $black;
   padding: 10px 30px;
   position: relative;
+  border-bottom: 1px solid white;
 }
 
 .logo a {
@@ -150,7 +151,7 @@
       transition: all .5s;
     }
   }
-  input {
+  #search-input {
     font-family: 'Staatliches', cursive;
     position: absolute;
     margin: auto;
