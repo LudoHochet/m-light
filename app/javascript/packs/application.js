@@ -26,6 +26,7 @@ require("channels")
 import "bootstrap";
 import { revealName } from '../components/reveal_name';
 import { resetOpacity } from '../components/reveal_name';
+import { revealAddPhotos } from '../components/reveal_forms';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -35,5 +36,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   revealName();
   resetOpacity();
+  revealAddPhotos();
 });
 

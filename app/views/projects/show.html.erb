@@ -46,13 +46,13 @@
     <% end %>
   <% end %>
   <% if user_signed_in? %>
-    <div class="text-center btn-add-photos">
-      <i class="fas fa-plus"></i>
+    <div class="text-center">
+      <i class="fas fa-plus" id="btn-add-photos"></i>
     </div>
   <% end %>
 
   <div class="d-flex justify-content-center my-3">
-    <div class="add-photos">
+    <div class="add-photos animated fadeIn">
       <h5 class="text-center">Add photo(s)</h5>
       <%= simple_form_for [@project, @illustration] do |f| %>
         <%= f.input :photos, as: :file, input_html: {multiple: true}, label: false %>
