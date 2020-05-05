@@ -1,4 +1,5 @@
 <div class="container show-project">
+
   <div class="infos d-flex justify-content-between align-items-center">
     <div class="d-flex justify-content-between align-items-center">
       <h5 class="mb-0"><%= @project.name %></h5>
@@ -7,8 +8,13 @@
       <p class="mb-0 mx-2"> - </p>
       <p class="mb-0 thin"><%= @project.location %></p>
     </div>
-    <div>
+    <div class="d-flex justify-content-between align-items-center">
       <p class="mb-0 thin"><%= @project.description %></p>
+      <% if user_signed_in? %>
+        <%= link_to edit_project_path(@project) do %>
+          <i class="far fa-edit ml-3"></i>
+        <% end %>
+      <% end %>
     </div>
   </div>
 
@@ -39,18 +45,24 @@
       <% end %>
     <% end %>
   <% end %>
+  <% if user_signed_in? %>
+    <div class="text-center btn-add-photos">
+      <i class="fas fa-plus"></i>
+    </div>
+  <% end %>
+
+  <div class="d-flex justify-content-center my-3">
+    <div class="add-photos">
+      <h5 class="text-center">Add photo(s)</h5>
+      <%= simple_form_for [@project, @illustration] do |f| %>
+        <%= f.input :photos, as: :file, input_html: {multiple: true}, label: false %>
+        <%= f.submit "confirm", class:"btn-white" %>
+      <% end %>
+    </div>
+  </div>
+
 </div> <!-- fin du container -->
 
 
 
-<%= link_to "modifier", edit_project_path(@project) %>
-<br>
-
-<h3>Ajouter des photos</h3>
-<%= simple_form_for [@project, @illustration] do |f| %>
-  <%= f.input :photos, as: :file, input_html: {multiple: true}  %>
-  <%= f.submit "Ajouter" %>
-<% end %>
-<br>
-<br>
 
