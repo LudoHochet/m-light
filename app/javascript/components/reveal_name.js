@@ -5,6 +5,7 @@ const revealName = () => {
       card.addEventListener('mouseover', (event) => {
         cards.forEach((card) => {
           card.classList.remove('lighter');
+          card.classList.remove('lighter-smooth');
           card.classList.add('darker');
           card.children[0].style.visibility = "hidden";
         });
@@ -23,7 +24,7 @@ const resetOpacity = () => {
       const cards = document.querySelectorAll(".card-project");
       cards.forEach((card) => {
         card.classList.remove('darker');
-        card.classList.add('lighter');
+        card.classList.add('lighter-smooth');
         card.children[0].style.visibility = "hidden";
       });
     });
