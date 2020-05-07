@@ -1,5 +1,5 @@
 const lightCards = () => {
-  const cardsZone = document.querySelector('.zone')
+  const cardsZone = document.querySelector('.project-zone')
   const cards = document.querySelectorAll(".card-project");
   if(cardsZone) {
     cardsZone.addEventListener('mouseleave', (event) => {
