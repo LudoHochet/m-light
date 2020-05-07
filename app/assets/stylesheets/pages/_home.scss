@@ -39,7 +39,35 @@
   display: grid;
   grid-template-columns: repeat(3,1fr);
   grid-gap: 16px;
-  flex-grow: 1;
+  // flex-grow: 1;
+}
+
+.cards-tv {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 16px;
+}
+
+.cards-fashions {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 16px;
+}
+
+.cards-lives {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 16px;
+}
+
+.cards-events {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 16px;
 }
 
 a:hover {
