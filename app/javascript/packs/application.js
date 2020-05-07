@@ -25,7 +25,6 @@ require("channels")
 // External imports
 import "bootstrap";
 import { revealName } from '../components/reveal_name';
-import { resetOpacity } from '../components/reveal_name';
 import { revealAddPhotos } from '../components/reveal_forms';
 import { lightCards } from '../components/light_cards';
 
@@ -36,7 +35,6 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   revealName();
-  resetOpacity();
   revealAddPhotos();
   lightCards();
 });

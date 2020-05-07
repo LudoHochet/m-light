@@ -17,19 +17,4 @@ const revealName = () => {
   }
 };
 
-const resetOpacity = () => {
-  const banner = document.querySelector(".banner");
-  if(banner) {
-    banner.addEventListener('mouseover', () => {
-      const cards = document.querySelectorAll(".card-project");
-      cards.forEach((card) => {
-        card.classList.remove('darker');
-        card.classList.add('lighter-smooth');
-        card.children[0].style.visibility = "hidden";
-      });
-    });
-  }
-};
-
 export { revealName };
-export { resetOpacity };
