@@ -1,8 +1,14 @@
 <%= render 'shared/banner' %>
 
 <div class="container">
+  <div class="filter-category d-flex justify-content-center">
+    <h6 class="mx-3 category" id="tv">TV</h6>
+    <h6 class="mx-3 category" id="live">LIVE</h6>
+    <h6 class="mx-3 category" id="evenement">EVENT</h6>
+    <h6 class="mx-3 category" id="fashion">FASHION</h6>
+  </div>
   <% if @projects %>
-    <div class="project-zone">
+    <div class="project-zone projects">
       <div class="cards">
         <% @projects.each do |project| %>
           <% if project.photos.attached? %>
@@ -53,8 +59,7 @@
   <% end %>
   <!-- ----------------------------------------- -->
   <div class="project-zone tvs">
-    <h3>TV</h3>
-    <div class="cards-tv">
+    <div class="cards">
       <% @tvs.each do |project| %>
       <% if project.photos.attached? %>
         <div class="entire-card">
@@ -103,8 +108,7 @@
   </div>
   <!-- ------------------------------------- -->
   <div class="project-zone fashions">
-    <h3>fashions</h3>
-    <div class="cards-fashions">
+    <div class="cards">
       <% @fashions.each do |project| %>
       <% if project.photos.attached? %>
         <div class="entire-card">
@@ -153,8 +157,7 @@
   </div>
   <!-- -------------------------------------- -->
   <div class="project-zone lives">
-    <h3>lives</h3>
-    <div class="cards-lives">
+    <div class="cards">
       <% @lives.each do |project| %>
       <% if project.photos.attached? %>
         <div class="entire-card">
@@ -203,8 +206,7 @@
   </div>
   <!-- -------------------------------------------- -->
   <div class="project-zone events">
-    <h3>events</h3>
-    <div class="cards-events">
+    <div class="cards">
       <% @events.each do |project| %>
       <% if project.photos.attached? %>
         <div class="entire-card">

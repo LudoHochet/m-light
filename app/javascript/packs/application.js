@@ -27,6 +27,10 @@ import "bootstrap";
 import { revealName } from '../components/reveal_name';
 import { revealAddPhotos } from '../components/reveal_forms';
 import { lightCards } from '../components/light_cards';
+import { filterByTv } from '../components/filter_category';
+import { filterByLive } from '../components/filter_category';
+import { filterByFashion } from '../components/filter_category';
+import { filterByEvent } from '../components/filter_category';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -37,5 +41,9 @@ document.addEventListener('turbolinks:load', () => {
   revealName();
   revealAddPhotos();
   lightCards();
+  filterByTv();
+  filterByLive();
+  filterByFashion();
+  filterByEvent();
 });
 
