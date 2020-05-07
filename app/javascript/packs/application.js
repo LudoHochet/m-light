@@ -27,6 +27,7 @@ import "bootstrap";
 import { revealName } from '../components/reveal_name';
 import { resetOpacity } from '../components/reveal_name';
 import { revealAddPhotos } from '../components/reveal_forms';
+// import { lightCards } from '../components/light_cards';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -37,5 +38,6 @@ document.addEventListener('turbolinks:load', () => {
   revealName();
   resetOpacity();
   revealAddPhotos();
+  // lightCards();
 });
 
