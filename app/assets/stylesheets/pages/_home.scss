@@ -53,12 +53,20 @@
   box-shadow: 0 0 30px rgba(255,255,255,0.1);
 }
 
+// .project-zone {
+//   position: relative;
+// }
+
 .cards {
+  // position: absolute;
   margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(3,1fr);
   grid-gap: 16px;
   // flex-grow: 1;
+  // -ms-transform: rotate(-45deg); /* IE 9 */
+  // -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+  // transform: rotate(-45deg); /* Standard syntax */
 }
 
 a:hover {
