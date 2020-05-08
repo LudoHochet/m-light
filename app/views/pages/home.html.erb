@@ -2,13 +2,18 @@
 
 <div class="container">
 
-  <div class="filter-category d-flex justify-content-center">
+  <div class="filter-category d-flex justify-content-center" id="all-projects">
     <h6 class="mx-3 category" id="tv">TV</h6>
     <h6 class="mx-3 category" id="live">LIVE</h6>
     <h6 class="mx-3 category" id="evenement">EVENT</h6>
     <h6 class="mx-3 category" id="fashion">FASHION</h6>
   </div>
 
+  <div>
+    <%= link_to root_path(anchor: 'all-projects') do %>
+      <i class="far fa-times-circle cancel d-none" id="cancel"></i>
+    <% end %>
+  </div>
   <% if @projects %>
     <div class="project-zone projects">
       <div class="cards">

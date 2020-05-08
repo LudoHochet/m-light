@@ -3,11 +3,13 @@ const filterByTv = () => {
   if(tv) {
     const zones = document.querySelectorAll('.project-zone');
     const tvZone = document.querySelector('.tvs');
+    const cancel = document.getElementById('cancel');
     tv.addEventListener('click', (event) => {
       zones.forEach((zone) =>{
         zone.classList.add('d-none');
       });
       tvZone.classList.remove('d-none');
+      cancel.classList.remove('d-none');
       tvZone.scrollIntoView({behavior: "smooth"});
       // active tabs
       const categories = document.querySelectorAll('.category');
@@ -25,11 +27,13 @@ const filterByLive = () => {
   if(live) {
     const zones = document.querySelectorAll('.project-zone');
     const liveZone = document.querySelector('.lives');
+    const cancel = document.getElementById('cancel');
     live.addEventListener('click', (event) => {
       zones.forEach((zone) =>{
         zone.classList.add('d-none');
       });
       liveZone.classList.remove('d-none');
+      cancel.classList.remove('d-none');
       liveZone.scrollIntoView({behavior: "smooth"});
       // active tabs
       const categories = document.querySelectorAll('.category');
@@ -47,11 +51,13 @@ const filterByFashion = () => {
   if(fashion) {
     const zones = document.querySelectorAll('.project-zone');
     const fashionZone = document.querySelector('.fashions');
+    const cancel = document.getElementById('cancel');
     fashion.addEventListener('click', (event) => {
       zones.forEach((zone) => {
         zone.classList.add('d-none');
       });
       fashionZone.classList.remove('d-none');
+      cancel.classList.remove('d-none');
       fashionZone.scrollIntoView({behavior: "smooth"});
       // active tabs
       const categories = document.querySelectorAll('.category');
@@ -70,11 +76,13 @@ const filterByEvent = () => {
   if(evenement) {
     const zones = document.querySelectorAll('.project-zone');
     const evenementZone = document.querySelector('.events');
+    const cancel = document.getElementById('cancel');
     evenement.addEventListener('click', (event) => {
       zones.forEach((zone) => {
         zone.classList.add('d-none');
       });
       evenementZone.classList.remove('d-none');
+      cancel.classList.remove('d-none');
       evenementZone.scrollIntoView({behavior: "smooth"});
       // active tabs
       const categories = document.querySelectorAll('.category');
