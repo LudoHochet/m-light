@@ -1,5 +1,5 @@
 .banner {
-  // background-size: cover;
+  background-size: cover;
   // background-position: center;
   // padding: 150px 0;
   height: 100vh;
@@ -17,6 +17,7 @@
   font-size: 100px;
   letter-spacing: 10px;
   padding: 20px 40px;
+  margin-top: 135px;
   background-image: url("https://images.unsplash.com/photo-1558620013-a08999547a36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -65,6 +66,8 @@
   position: absolute;
   letter-spacing: 10px;
   font-size: 102px;
+  top: 209px;
+  left: 197px;
 }
 
 .banner p {
@@ -77,6 +80,7 @@
 .banner span {
   font-family: 'Staatliches', cursive;
   color: rgba(255,255,255,1);
+
 }
 
 // https://images.unsplash.com/flagged/photo-1578762313860-ed69f165c4eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
