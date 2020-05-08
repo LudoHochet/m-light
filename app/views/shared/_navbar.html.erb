@@ -14,7 +14,7 @@
         <% end %>
 
         <!-- search zone -->
-        <div>
+        <div class="search-navbar">
           <%= form_tag root_path, method: :get do %>
             <%= text_field_tag :query, params[:query], placeholder: "Find a project", id:"search-input"%>
             <%#= submit_tag "Search", class: "btn btn-primary" %>
