@@ -2,9 +2,15 @@
   <div class="navbar-mlight d-flex justify-content-between fixed-top">
 
       <!-- first element of flex box -->
-      <div class="logo d-flex justify-content-left align-items-center">
-        <%= link_to "M-Light", root_path %>
-      </div>
+      <% if current_page?(root_path) %>
+        <div class="logo d-flex justify-content-left align-items-center invisible">
+          <%= link_to "M-Light", root_path %>
+        </div>
+      <% else %>
+        <div class="logo d-flex justify-content-left align-items-center visible">
+          <%= link_to "M-Light", root_path %>
+        </div>
+      <% end %>
       <!-- second element of flexbox -->
       <div class="d-flex justify-content-right align-items-center">
 
@@ -14,7 +20,7 @@
         <% end %>
 
         <!-- search zone -->
-        <div>
+        <div class="search-navbar">
           <%= form_tag root_path, method: :get do %>
             <%= text_field_tag :query, params[:query], placeholder: "Find a project", id:"search-input"%>
             <%#= submit_tag "Search", class: "btn btn-primary" %>

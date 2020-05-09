@@ -1,16 +1,66 @@
 .banner {
   background-size: cover;
-  background-position: center;
-  padding: 150px 0;
-  height: 80vh;
+  // margin-top: 50px;
+  padding-top: 240px;
+  height: 100vh;
+  background-image: url('banner2.png');
 }
 
-.banner h1 {
-  margin: 0;
+.mask {
+  margin-top: 55px;
+}
+
+.highlight {
+  position: relative;
+  display: inline-block;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 88px;
-  letter-spacing: 3px;
+  font-size: 100px;
+  letter-spacing: 10px;
+  padding: 20px 40px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+}
+
+.border-fx {
+
+  &::before,
+  &::after {
+    border: 4px solid white;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:50%;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height:50%;
+    border-right-color: transparent;
+    border-top-color: transparent;
+  }
+}
+
+.shadow {
+  color: white;
+  position: absolute;
+  letter-spacing: 10px;
+  font-size: 102px;
+  top: 209px;
+  left: 197px;
 }
 
 .banner p {
@@ -23,4 +73,5 @@
 .banner span {
   font-family: 'Staatliches', cursive;
   color: rgba(255,255,255,1);
+
 }

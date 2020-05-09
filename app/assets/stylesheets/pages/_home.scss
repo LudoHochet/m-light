@@ -53,33 +53,26 @@
   box-shadow: 0 0 30px rgba(255,255,255,0.1);
 }
 
+
 .cards {
-  margin-top: 30px;
+  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(3,1fr);
   grid-gap: 16px;
-  // flex-grow: 1;
 }
 
-.events {
-  display: none;
-}
-
-.tvs {
-  display: none;
-}
-
-.fashions {
-  display: none;
-}
-
-.lives {
-  display: none;
-}
 a:hover {
   text-decoration:none;
 }
 
+#cancel {
+  font-weight:lighter;
+  color: white;
+  opacity: 0.7;
+  &:hover {
+    opacity: 1;
+  }
+}
 .delete-project {
   position: absolute;
   right: 20px;
