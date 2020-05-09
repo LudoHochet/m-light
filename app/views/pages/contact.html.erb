@@ -1,8 +1,29 @@
-<h2>Keep in touch</h2>
-<%= simple_form_for @contact do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :email %>
-  <%= f.input :message %>
-  <%= f.submit 'send' %>
-<% end %>
+
+<div class="container contact-form">
+  <h2>Keep in touch</h2>
+  <%= simple_form_for @contact  do |f| %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="form-group">
+          <%= f.text_field :first_name, placeholder:"first_name", class: "form-control"%>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="form-group">
+          <%= f.text_field :last_name, placeholder:"last_name", class: "form-control"%>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="form-group">
+          <%= f.text_field :email, placeholder: "email", class: "form-control" %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" >
+      <%= f.input :message, placeholder: "your message", class: "form-control" %>
+    </div>
+    <div>
+      <%= f.submit "SEND", class:"btn-white" %>
+    </div>
+  <% end %>
+</div>
