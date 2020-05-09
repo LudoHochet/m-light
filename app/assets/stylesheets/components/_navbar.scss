@@ -1,5 +1,5 @@
 .navbar-mlight {
-  background-color: $black;
+  background-color: transparent;
   padding: 10px 30px;
   // position: relative;
   // border-bottom: 1px solid white;
@@ -11,7 +11,7 @@
   color: white;
   opacity: 0.9;
   font-size: 20px;
-  visibility: hidden;
+  visibility: transition 3s;
   &:hover {
     opacity: 1;
     color: white;
