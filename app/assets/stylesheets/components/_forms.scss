@@ -1,6 +1,20 @@
-// .white-bg {
-//   background-color: $light-gray;
-// }
+.login-signup {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 30px;
+  margin-top: 100px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.5);
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 20px
+  }
+}
 
 .form {
   margin-top: 50px;
@@ -8,7 +22,7 @@
   border-radius: 5px;
   padding: 20px;
   padding-bottom: 50px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.5);
+  box-shadow: 0 0 30px rgba(255,255,255,0.5);
 }
 
 .submit {
@@ -41,4 +55,6 @@
 input.btn-white {
   width: 100%;
 }
+
+
 
