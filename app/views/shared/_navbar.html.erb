@@ -1,4 +1,18 @@
 
+
+
+
+
+
+
+
+
+
+
+<!-- --------------------------- -->
+
+
+
   <div class="navbar-mlight d-flex justify-content-between fixed-top">
 
       <!-- first element of flex box -->
@@ -15,21 +29,28 @@
       <div class="d-flex justify-content-right align-items-center">
 
         <!-- btn new-project for user signed_in -->
-        <% if user_signed_in? %>
-          <%= link_to "new project", new_project_path, class:"btn-white mr-3" %>
-        <% end %>
+        <div>
+          <% if user_signed_in? %>
+            <%= link_to "new project", new_project_path, class:"btn-white mr-3" %>
+          <% end %>
+        </div>
 
         <!-- search zone -->
-        <div class="search-navbar">
-          <%= form_tag root_path, method: :get do %>
-            <%= text_field_tag :query, params[:query], placeholder: "Find a project", id:"search-input"%>
-            <%#= submit_tag "Search", class: "btn btn-primary" %>
-            <div class="search"></div>
+        <div>
+          <%= form_tag root_path, class:"form-inline d-flex justify-content-center md-form form-sm active-pink active-pink-2 mt-2", method: :get do %>
+            <div class="md-form my-0">
+              <%= text_field_tag :query, params[:query], placeholder: "Find a project", id:"search-input", class:"form-control form-control-sm ml-3 w-75"%>
+              <%#= submit_tag "Search", class: "btn btn-outline-white btn-md my-0 ml-sm-2" %>
+            <!-- <div class="search"></div> -->
+            </div>
           <% end %>
         </div>
         <!-- end search zone -->
 
-        <p><%= link_to "Contact", contact_path, class:"links" %></p>
+
+        <div>
+          <p><%= link_to "Contact", contact_path, class:"links" %></p>
+        </div>
 
         <div class="icon-session">
           <i class="fas fa-bars dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
