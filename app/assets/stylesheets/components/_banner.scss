@@ -75,3 +75,35 @@
   color: rgba(255,255,255,1);
 
 }
+
+@media (max-width: 992px) {
+  .highlight {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .highlight {
+    font-size: 50px;
+  }
+  .banner {
+    background-position: center;
+    // height: 70vh;
+  }
+  .banner p {
+    font-size: 18px;
+  }
+}
+
+
+@media (max-width: 572px) {
+  .highlight {
+    font-size:40px;
+  }
+  .banner {
+    padding-top: 305px;
+  }
+  .banner p {
+    font-size: 14px;
+  }
+}
