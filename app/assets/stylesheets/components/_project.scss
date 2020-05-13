@@ -1,10 +1,10 @@
 .show-project{
-  margin-top:80px;
+  margin-top:70px;
 }
 
 .show-project img {
   width: 100%;
-  height: calc(100vh - 30px);
+  height: calc(100vh - 100px);
   // object-fit: contain;
   object-fit: cover;
 }
@@ -23,11 +23,15 @@
   margin-bottom: 20px;
 }
 
+.infos {
+  background-color: black;
+}
+
 .sticky {
   position: -webkit-sticky;
-position: sticky;
-top: 80px;
-z-index: 10;
+  position: sticky;
+  top: 70px;
+  z-index: 10;
 }
 
 .thin {

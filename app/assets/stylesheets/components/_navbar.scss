@@ -1,8 +1,16 @@
 .navbar-mlight {
-  background-color: transparent;
   padding: 10px 30px;
   // position: relative;
   // border-bottom: 1px solid white;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-black {
+  background-color: black;
+  padding-bottom: 30px;
 }
 
 .logo a {
