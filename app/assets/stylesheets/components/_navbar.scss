@@ -26,8 +26,7 @@
 
 .icon-session {
  color: white;
- margin-left: 1rem;
- opacity: 0.6;
+ opacity: 0.7;
  &:hover {
   cursor: pointer;
   opacity: 1;
@@ -38,7 +37,7 @@
 .links {
   font-family: 'Staatliches', cursive;
   color: white;
-  opacity: 0.6;
+  opacity: 0.7;
   &:hover {
     text-decoration: none;
     color: white;
@@ -52,7 +51,7 @@
 // }
 
 .icon-session a {
-  color:rgba(0,0,0,0.6);
+  color:rgba(0,0,0,0.7);
   &:hover {
     text-decoration: none;
     color:rgba(0,0,0,1);
@@ -107,16 +106,18 @@
 
 
 .active-pink input.form-control[type=text] {
-  border-bottom: 1px solid #f48fb1;
+  border-bottom: 1px solid white;
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
   background-color: transparent;
   color: white;
-  box-shadow: 0 1px 0 0 #f48fb1;
+  box-shadow: 0 1px 0 0 white;
 }
 
-
+input#search-input {
+    margin-bottom: 15px;
+}
 //
 
   // .search {
