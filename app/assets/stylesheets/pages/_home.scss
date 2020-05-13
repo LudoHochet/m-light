@@ -1,38 +1,5 @@
 // Specific CSS for your home-page
 
-// test pour scroll horizontal
-
-// .scrolling-wrapper {
-//   overflow-x: scroll;
-//   overflow-y: hidden;
-//   white-space: nowrap;
-
-//   .card {
-//     display: inline-block;
-//   }
-// }
-
-// .card {
-//   border: 2px solid $red;
-//   width: 150px;
-//   height: 75px;
-//   background: black;
-//   &:hover {
-//     width: 200px;
-//     height: 125px;
-//     transition: 1s;
-//   }
-// }
-
-// .scrolling-wrapper {
-//   height: 80px;
-//   margin-bottom: 20px;
-//   width: 100%;
-//   -webkit-overflow-scrolling: touch;
-//   &::-webkit-scrollbar {
-//     display: none;
-//   }
-// }
 .filter-category {
   margin-top: 30px;
 }
@@ -81,3 +48,14 @@ a:hover {
   font-size: 24px;
 }
 
+@media (max-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media (max-width: 576px) {
+ .cards {
+    grid-template-columns: 1fr;
+  }
+}
