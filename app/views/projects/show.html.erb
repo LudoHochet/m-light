@@ -1,20 +1,22 @@
 <div class="container show-project">
 
-  <div class="infos d-flex justify-content-between align-items-center">
-    <div class="d-flex justify-content-between align-items-center">
-      <h5 class="mb-0"><%= @project.name %></h5>
-      <p class="mb-0 mx-2"> - </p>
-      <p class="mb-0 thin"><%= @project.date %></p>
-      <p class="mb-0 mx-2"> - </p>
-      <p class="mb-0 thin"><%= @project.location %></p>
-    </div>
-    <div class="d-flex justify-content-between align-items-center">
-      <p class="mb-0 thin"><%= @project.description %></p>
-      <% if user_signed_in? %>
-        <%= link_to edit_project_path(@project) do %>
-          <i class="far fa-edit ml-3"></i>
+  <div class="sticky">
+    <div class="infos d-flex justify-content-between align-items-center">
+      <div class="d-flex justify-content-between align-items-center">
+        <h5 class="mb-0"><%= @project.name %></h5>
+        <p class="mb-0 mx-2"> - </p>
+        <p class="mb-0 thin"><%= @project.date %></p>
+        <p class="mb-0 mx-2"> - </p>
+        <p class="mb-0 thin"><%= @project.location %></p>
+      </div>
+      <div class="d-flex justify-content-between align-items-center">
+        <p class="mb-0 thin"><%= @project.description %></p>
+        <% if user_signed_in? %>
+          <%= link_to edit_project_path(@project) do %>
+            <i class="far fa-edit ml-3"></i>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 

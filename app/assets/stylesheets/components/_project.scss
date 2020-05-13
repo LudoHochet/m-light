@@ -23,10 +23,12 @@
   margin-bottom: 20px;
 }
 
-// .infos {
-//   position: fixed;
-//   z-index: 100;
-// }
+.sticky {
+  position: -webkit-sticky;
+position: sticky;
+top: 80px;
+z-index: 10;
+}
 
 .thin {
   font-weight: 100;
