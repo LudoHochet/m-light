@@ -7,7 +7,7 @@ class PagesController < ApplicationController
     else
       @projects = Project.order(:created_at)
       @tvs = Project.where(category: "TV")
-      @fashions = Project.where(category: "Mode")
+      @fashions = Project.where(category: "Fashion")
       @events = Project.where(category: "Events")
       @lives = Project.where(category: "Live")
     end
