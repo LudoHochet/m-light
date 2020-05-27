@@ -115,16 +115,17 @@
 
 .active-pink input.form-control[type=text] {
   // border-bottom: 1px solid white;
-  // border-top: 1px solid transparent;
-  // border-left: 1px solid transparent;
-  // border-right: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
   background-color: transparent;
   color: white;
-  // box-shadow: 0 1px 0 0 white;
+  box-shadow: 0 1px 0 0 white;
 }
 
 input#search-input {
-  margin-bottom: 15px;
+  // margin-bottom: 15px;
+  height: 20px;
 }
 //
 
