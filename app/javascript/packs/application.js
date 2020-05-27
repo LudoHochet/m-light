@@ -32,6 +32,7 @@ import { filterByLive } from '../components/filter_category';
 import { filterByFashion } from '../components/filter_category';
 import { filterByEvent } from '../components/filter_category';
 import { initUpdateNavbarOnScroll } from '../components/init_navbar';
+import { revealSearch } from '../components/reveal_search';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -47,5 +48,6 @@ document.addEventListener('turbolinks:load', () => {
   filterByFashion();
   filterByEvent();
   initUpdateNavbarOnScroll();
+  revealSearch();
 });
 
