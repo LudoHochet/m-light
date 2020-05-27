@@ -3,6 +3,7 @@ const initUpdateNavbarOnScroll = () => {
   if (navbar) {
     window.addEventListener('scroll', () => {
       if (window.scrollY >= window.innerHeight) {
+        console.log("hello");
         navbar.style.visibility = 'visible';
       }
     });
