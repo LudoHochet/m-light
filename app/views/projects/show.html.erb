@@ -71,41 +71,72 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://images.unsplash.com/photo-1591670937063-1581919499ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="...">
-    </div>
+
     <% if @project.photos.attached? %>
-    <% @project.photos.each do |photo| %>
-    <div class="carousel-item">
-      <!-- <img src="https://images.unsplash.com/photo-1591629592213-c6fb16dde30a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="..."> -->
-      <div class="show-image">
-        <%= cl_image_tag photo.key %>
-        <% if user_signed_in? %>
-          <%= link_to delete_photo_attachment_project_path(@project, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
-            <i class="far fa-times-circle delete-photo"></i>
-          <% end %>
-        <% end %>
+      <!-- first image of the project -->
+      <div class="carousel-item active">
+        <%= cl_image_tag @project.photos.first.key %>
       </div>
-    </div>
-    <% end %>
-  <% end %>
-  <% if @project.illustrations %>
-    <% @project.illustrations.each do |illustration| %>
-      <% illustration.photos.each do |photo| %>
+      <!-- other image of the project less the first one -->
+      <% @project.photos.drop(1).each do |photo| %>
         <div class="carousel-item">
-          <!-- <img src="https://images.unsplash.com/photo-1591624064379-1fad8c51dd8a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="..."> -->
-        <div class="show-image">
-          <%= cl_image_tag photo.key %>
-          <% if user_signed_in? %>
-            <%= link_to delete_photo_attachment_project_illustration_path(@project, illustration, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
-              <i class="far fa-times-circle delete-photo"></i>
+          <div class="show-image">
+            <%= cl_image_tag photo.key %>
+            <% if user_signed_in? %>
+              <%= link_to delete_photo_attachment_project_path(@project, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+                <i class="far fa-times-circle delete-photo"></i>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
+          </div>
         </div>
       <% end %>
+
+      <% if @project.illustrations %>
+        <% @project.illustrations.each do |illustration| %>
+          <% illustration.photos.each do |photo| %>
+            <div class="carousel-item">
+              <div class="show-image">
+                <%= cl_image_tag photo.key %>
+                <% if user_signed_in? %>
+                  <%= link_to delete_photo_attachment_project_illustration_path(@project, illustration, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+                    <i class="far fa-times-circle delete-photo"></i>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+
+    <% else %>
+
+      <div class="carousel-item active">
+        <%= cl_image_tag @project.illustrations.last.photos.first.key %>
+      </div>
+
+      <% @project.illustrations.each do |illustration| %>
+          <% illustration.photos.each do |photo| %>
+            <div class="carousel-item">
+              <div class="show-image">
+                <%= cl_image_tag photo.key %>
+                <% if user_signed_in? %>
+                  <%= link_to delete_photo_attachment_project_illustration_path(@project, illustration, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+                    <i class="far fa-times-circle delete-photo"></i>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+
     <% end %>
+
+<!-- 5.times do |n| puts n += 1 end -->
+
+    <% if @project.photos.attached? %>
+
   <% end %>
+
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -40,6 +40,7 @@ import { revealSearch } from '../components/reveal_search';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  console.log("test");
   revealName();
   revealAddPhotos();
   lightCards();
