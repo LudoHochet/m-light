@@ -76,6 +76,11 @@
       <!-- first image of the project -->
       <div class="carousel-item active">
         <%= cl_image_tag @project.photos.first.key %>
+        <% if user_signed_in? %>
+              <%= link_to delete_photo_attachment_project_path(@project, @project.photos.first), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+                <i class="far fa-times-circle delete-photo"></i>
+              <% end %>
+            <% end %>
       </div>
       <!-- other image of the project less the first one -->
       <% @project.photos.drop(1).each do |photo| %>
