@@ -96,6 +96,7 @@
         </div>
       <% end %>
 
+      <!-- all other images within the possible illustrations -->
       <% if @project.illustrations %>
         <% @project.illustrations.each do |illustration| %>
           <% illustration.photos.each do |photo| %>
@@ -114,9 +115,21 @@
       <% end %>
 
     <% else %>
+    <!-- if there is no photos attached to the project, it means it was delete and replace by possible illustrations -->
 
       <div class="carousel-item active">
-        <%= cl_image_tag @project.illustrations.last.photos.first.key %>
+        <!-- test to check the first illustrations with photos -->
+        <% @project.illustrations.each do |illustration| %>
+          <% if illustration.photos.attached? %>
+            <%= cl_image_tag illustration.photos.first.key %>
+              <% if user_signed_in? %>
+                <%= link_to delete_photo_attachment_project_illustration_path(@project, illustration, illustration.photos.first), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+                  <i class="far fa-times-circle delete-photo"></i>
+                <% end %>
+              <% end %>
+            <% break %>
+          <% end %>
+        <% end %>
       </div>
 
       <% @project.illustrations.each do |illustration| %>
