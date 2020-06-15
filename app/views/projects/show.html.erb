@@ -1,6 +1,6 @@
 <div class="container show-project">
 
-  <div class="sticky">
+ <!--  <div class="sticky"> -->
     <div class="infos d-flex justify-content-between align-items-center">
       <div class="d-flex justify-content-between align-items-center">
         <h5 class="mb-0"><%= @project.name %></h5>
@@ -18,52 +18,38 @@
         <% end %>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 
-  <% if @project.photos.attached? %>
-    <% @project.photos.each do |photo| %>
-      <div class="show-image">
-        <%= cl_image_tag photo.key %>
-        <% if user_signed_in? %>
-          <%= link_to delete_photo_attachment_project_path(@project, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
-            <i class="far fa-times-circle delete-photo"></i>
-          <% end %>
-        <% end %>
-      </div>
-    <% end %>
-  <% end %>
+  <%# if @project.photos.attached? %>
+    <%# @project.photos.each do |photo| %>
+      <!-- <div class="show-image"> -->
+        <%#= cl_image_tag photo.key %>
+        <%# if user_signed_in? %>
+          <%#= link_to delete_photo_attachment_project_path(@project, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+            <!-- <i class="far fa-times-circle delete-photo"></i> -->
+          <%# end %>
+        <%# end %>
+      <!-- </div> -->
+    <%# end %>
+  <%# end %>
 
-  <% if @project.illustrations %>
-    <% @project.illustrations.each do |illustration| %>
-      <% illustration.photos.each do |photo| %>
-        <div class="show-image">
-          <%= cl_image_tag photo.key %>
-          <% if user_signed_in? %>
-            <%= link_to delete_photo_attachment_project_illustration_path(@project, illustration, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
-              <i class="far fa-times-circle delete-photo"></i>
-            <% end %>
-          <% end %>
-        </div>
-      <% end %>
-    <% end %>
-  <% end %>
-  <% if user_signed_in? %>
-    <div class="text-center">
-      <i class="fas fa-plus" id="btn-add-photos"></i>
-    </div>
-  <% end %>
+  <%# if @project.illustrations %>
+    <%# @project.illustrations.each do |illustration| %>
+      <%# illustration.photos.each do |photo| %>
+        <!-- <div class="show-image"> -->
+          <%#= cl_image_tag photo.key %>
+          <%# if user_signed_in? %>
+            <%#= link_to delete_photo_attachment_project_illustration_path(@project, illustration, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+              <!-- <i class="far fa-times-circle delete-photo"></i> -->
+            <%# end %>
+          <%# end %>
+        <!-- </div> -->
+      <%# end %>
+    <%# end %>
+  <%# end %>
 
-  <div class="d-flex justify-content-center my-3">
-    <div class="add-photos animated fadeIn">
-      <h5 class="text-center">Add photo(s)</h5>
-      <%= simple_form_for [@project, @illustration] do |f| %>
-        <%= f.input :photos, as: :file, input_html: {multiple: true}, label: false %>
-        <%= f.submit "confirm", class:"btn-white" %>
-      <% end %>
-    </div>
-  </div>
 
-<!-- test -->
+<!-- carousel -->
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -119,7 +105,6 @@
 
     <% else %>
     <!-- if there is no photos attached to the project, it means the were delete and replace by possible illustrations -->
-
       <!-- display the first photos of the first illustration with photos (clean in the controller) -->
       <div class="carousel-item active">
         <%= cl_image_tag @project.illustrations.first.photos.first.key %>
@@ -132,24 +117,17 @@
           </div>
         </div>
       <% end %>
-
-
       <!-- display all the other photos of illustrations without the first illustration -->
       <% @project.illustrations.drop(1).each do |illustration| %>
-
-          <% illustration.photos.each do |photo| %>
-            <div class="carousel-item">
-              <div class="show-image">
-                <%= cl_image_tag photo.key %>
-              </div>
+        <% illustration.photos.each do |photo| %>
+          <div class="carousel-item">
+            <div class="show-image">
+              <%= cl_image_tag photo.key %>
             </div>
-          <% end %>
-
-
+          </div>
+        <% end %>
       <% end %>
-
     <% end %>
-
 
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -162,8 +140,22 @@
   </a>
 </div>
 
+<!-- fin du carousel -->
+  <% if user_signed_in? %>
+    <div class="text-center mt-3">
+      <i class="fas fa-plus" id="btn-add-photos"></i>
+    </div>
+  <% end %>
 
-<!-- fin du test -->
+  <div class="d-flex justify-content-center my-3">
+    <div class="add-photos animated fadeIn">
+      <h5 class="text-center">Add photo(s)</h5>
+      <%= simple_form_for [@project, @illustration] do |f| %>
+        <%= f.input :photos, as: :file, input_html: {multiple: true}, label: false %>
+        <%= f.submit "confirm", class:"btn-white" %>
+      <% end %>
+    </div>
+  </div>
 
 </div> <!-- fin du container -->
 
