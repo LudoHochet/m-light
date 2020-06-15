@@ -17,11 +17,7 @@ class ProjectsController < ApplicationController
 
   def show
     @illustration = Illustration.new
-    @project.illustrations.each do |illustration|
-      if illustration.photos.attached? == false
-        illustration.destroy
-      end
-    end
+    clean_illustrations(@project)
   end
 
   def edit
@@ -44,6 +40,14 @@ class ProjectsController < ApplicationController
   end
 
   private
+
+  def clean_illustrations(project)
+    project.illustrations.each do |illustration|
+      if illustration.photos.attached? == false
+        illustration.destroy
+      end
+    end
+  end
 
   def set_project
     @project = Project.find(params[:id])
