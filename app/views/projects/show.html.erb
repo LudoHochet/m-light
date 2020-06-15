@@ -67,8 +67,11 @@
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <% (@count_photos - 1).times do |n|%>
+      <li data-target="#carouselExampleIndicators" data-slide-to="<%= n += 1 %>"></li>
+    <% end %>
+    <!-- <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> -->
   </ol>
   <div class="carousel-inner">
 
@@ -146,7 +149,7 @@
       <% end %>
 
     <% end %>
-<!-- 5.times do |n| puts n += 1 end -->
+
 
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -161,6 +164,6 @@
 
 
 <!-- fin du test -->
-<h1><%= @count_photos %></h1>
+
 </div> <!-- fin du container -->
 
