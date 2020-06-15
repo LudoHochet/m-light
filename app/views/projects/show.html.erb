@@ -115,12 +115,13 @@
       <% end %>
 
     <% else %>
-    <!-- if there is no photos attached to the project, it means it was delete and replace by possible illustrations -->
+    <!-- if there is no photos attached to the project, it means the were delete and replace by possible illustrations -->
 
+      <!-- display the first photos of the first illustration with photos (clean in the controller) -->
       <div class="carousel-item active">
         <%= cl_image_tag @project.illustrations.first.photos.first.key %>
       </div>
-
+      <!-- display the possible other photos of the first illustration -->
       <% @project.illustrations.first.photos.drop(1).each do |photo| %>
         <div class="carousel-item">
           <div class="show-image">
@@ -130,7 +131,7 @@
       <% end %>
 
 
-      <!-- remove the first photo alreday displayed and display the potentiels other of the same illustrations -->
+      <!-- display all the other photos of illustrations without the first illustration -->
       <% @project.illustrations.drop(1).each do |illustration| %>
 
           <% illustration.photos.each do |photo| %>
