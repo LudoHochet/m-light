@@ -17,6 +17,11 @@ class ProjectsController < ApplicationController
 
   def show
     @illustration = Illustration.new
+    @project.illustrations.each do |illustration|
+      if illustration.photos.attached? == false
+        illustration.destroy
+      end
+    end
   end
 
   def edit
