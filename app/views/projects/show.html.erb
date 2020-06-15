@@ -77,10 +77,10 @@
       <div class="carousel-item active">
         <%= cl_image_tag @project.photos.first.key %>
         <% if user_signed_in? %>
-              <%= link_to delete_photo_attachment_project_path(@project, @project.photos.first), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
-                <i class="far fa-times-circle delete-photo"></i>
-              <% end %>
-            <% end %>
+          <%= link_to delete_photo_attachment_project_path(@project, @project.photos.first), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+            <i class="far fa-times-circle delete-photo"></i>
+          <% end %>
+        <% end %>
       </div>
       <!-- other image of the project less the first one -->
       <% @project.photos.drop(1).each do |photo| %>
@@ -118,33 +118,30 @@
     <!-- if there is no photos attached to the project, it means it was delete and replace by possible illustrations -->
 
       <div class="carousel-item active">
-        <!-- test to check the first illustrations with photos and display the first photos -->
-        <% @project.illustrations.each do |illustration| %>
-          <% if illustration.photos.attached? %>
-            <%= cl_image_tag illustration.photos.first.key %>
-              <% if user_signed_in? %>
-                <%= link_to delete_photo_attachment_project_illustration_path(@project, illustration, illustration.photos.first), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
-                  <i class="far fa-times-circle delete-photo"></i>
-                <% end %>
-              <% end %>
-            <% break %>
-          <% end %>
-        <% end %>
+        <%= cl_image_tag @project.illustrations.first.photos.first.key %>
       </div>
+
+      <% @project.illustrations.first.photos.drop(1).each do |photo| %>
+        <div class="carousel-item">
+          <div class="show-image">
+            <%= cl_image_tag photo.key %>
+          </div>
+        </div>
+      <% end %>
 
 
       <!-- remove the first photo alreday displayed and display the potentiels other of the same illustrations -->
-      <% @project.illustrations.each do |illustration| %>
-        <% if illustration.photos.attached? %>
-          <% illustration.photos.drop(1).each do |photo| %>
+      <% @project.illustrations.drop(1).each do |illustration| %>
+
+          <% illustration.photos.each do |photo| %>
             <div class="carousel-item">
               <div class="show-image">
                 <%= cl_image_tag photo.key %>
               </div>
             </div>
           <% end %>
-          <% break %>
-        <% end %>
+
+
       <% end %>
 
     <% end %>
