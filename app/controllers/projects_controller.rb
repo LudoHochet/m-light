@@ -18,6 +18,7 @@ class ProjectsController < ApplicationController
   def show
     @illustration = Illustration.new
     clean_illustrations(@project)
+    @count_photos = photos_count(@project)
   end
 
   def edit
@@ -47,6 +48,15 @@ class ProjectsController < ApplicationController
         illustration.destroy
       end
     end
+  end
+
+  def photos_count(project)
+    count = 0
+    count += project.photos.count
+    project.illustrations.each do |illustration|
+      count += illustration.photos.count
+    end
+    return count
   end
 
   def set_project
