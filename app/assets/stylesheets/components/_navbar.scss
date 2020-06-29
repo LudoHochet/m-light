@@ -9,8 +9,7 @@
 }
 
 .bg-black {
-  background-color: black;
-  // padding-bottom: 27px;
+  background-color: $black;
 }
 
 .logo a {
@@ -35,12 +34,24 @@
 
 .flex-item:first-child>div{
   margin-right: auto;
-  text-align: left;
+  // text-align: left;
 }
 
 .flex-item:last-child>div{
   margin-left: auto;
 //   justify-content: right;
+}
+
+.category {
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  &:hover {
+    color: rgba(255,255,255,1);
+    transition: 0.5s;
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(255,255,255,0.1);
+  }
 }
 
 .navbar-mlight p {

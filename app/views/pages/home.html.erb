@@ -1,17 +1,8 @@
 <%= render 'shared/banner' %>
 
 <div class="container">
-
-  <div class="filter" id="all-projects">
-  </div>
-
-  <div class="mt-3">
-    <%= link_to root_path(anchor: 'all-projects') do %>
-      <i class="far fa-times-circle cancel d-none" id="cancel"></i>
-    <% end %>
-  </div>
   <% if @projects %>
-    <div class="project-zone projects">
+    <div class="project-zone projects" id="all-projects">
       <div class="cards">
         <% @projects.each do |project| %>
           <% if project.photos.attached? %>
@@ -62,7 +53,12 @@
   <% end %>
   <!-- ----------------------------------------- -->
   <% if @tvs %>
-    <div class="project-zone tvs d-none">
+    <div class="project-zone result tvs d-none">
+      <div class="cancel-filter">
+        <%= link_to root_path(anchor: 'all-projects') do %>
+          <i class="far fa-times-circle cancel d-none" id="cancel"></i>
+        <% end %>
+      </div>
     <div class="cards">
       <% @tvs.each do |project| %>
       <% if project.photos.attached? %>
@@ -114,7 +110,7 @@
 
   <!-- ------------------------------------- -->
   <% if @fashions %>
-    <div class="project-zone fashions d-none">
+    <div class="project-zone result fashions d-none">
     <div class="cards">
       <% @fashions.each do |project| %>
       <% if project.photos.attached? %>
@@ -166,7 +162,7 @@
 
   <!-- -------------------------------------- -->
   <% if @lives %>
-    <div class="project-zone lives d-none">
+    <div class="project-zone result lives d-none">
     <div class="cards">
       <% @lives.each do |project| %>
       <% if project.photos.attached? %>
@@ -218,7 +214,7 @@
 
   <!-- -------------------------------------------- -->
   <% if @events %>
-    <div class="project-zone events d-none">
+    <div class="project-zone result events d-none">
     <div class="cards">
       <% @events.each do |project| %>
       <% if project.photos.attached? %>

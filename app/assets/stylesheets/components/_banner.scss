@@ -4,6 +4,7 @@
   padding-top: 240px;
   height: 100vh;
   background-image: url('/assets/banner2.png');
+  position:relative;
 }
 
 .mask {
@@ -74,6 +75,12 @@
   font-family: 'Staatliches', cursive;
   color: rgba(255,255,255,1);
 
+}
+
+.scroll {
+  position: absolute;
+  right: 100px;
+  bottom: 70px;
 }
 
 @media (max-width: 992px) {
