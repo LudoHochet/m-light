@@ -5,6 +5,7 @@
 
 .result {
   margin-bottom: 500px;
+  padding-top: 80px;
 }
 .active {
   color: rgba(255,255,255,1);
@@ -22,11 +23,7 @@ a:hover {
   text-decoration:none;
 }
 
-.cancel-filter {
-  margin-top: 80px;
-}
-
-#cancel {
+.cancel {
   font-weight:lighter;
   color: white;
   opacity: 0.7;
