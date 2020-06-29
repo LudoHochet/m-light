@@ -33,6 +33,7 @@ import { filterByFashion } from '../components/filter_category';
 import { filterByEvent } from '../components/filter_category';
 import { initUpdateNavbarOnScroll } from '../components/init_navbar';
 import { revealSearch } from '../components/reveal_search';
+import { searchAutofocus } from '../components/search_autofocus';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -50,12 +51,6 @@ document.addEventListener('turbolinks:load', () => {
   filterByEvent();
   initUpdateNavbarOnScroll();
   revealSearch();
-  const searchIcon = document.querySelector('.search-icon');
-  if (searchIcon) {
-    searchIcon.addEventListener('click', (event) => {
-      const search = document.getElementById('search-input');
-      search.focus();
-    });
-  }
+  searchAutofocus();
 });
 
