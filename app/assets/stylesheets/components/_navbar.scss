@@ -27,6 +27,22 @@
   }
 }
 
+.flex-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-item:first-child>div{
+  margin-right: auto;
+  text-align: left;
+}
+
+.flex-item:last-child>div{
+  margin-left: auto;
+//   justify-content: right;
+}
+
 .navbar-mlight p {
   font-weight: lighter;
   margin-bottom: 0;
