@@ -40,7 +40,7 @@ import { revealSearch } from '../components/reveal_search';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  console.log("test");
+  console.log("M-Light");
   revealName();
   revealAddPhotos();
   lightCards();
@@ -50,5 +50,12 @@ document.addEventListener('turbolinks:load', () => {
   filterByEvent();
   initUpdateNavbarOnScroll();
   revealSearch();
+  const searchIcon = document.querySelector('.search-icon');
+  if (searchIcon) {
+    searchIcon.addEventListener('click', (event) => {
+      const search = document.getElementById('search-input');
+      search.focus();
+    });
+  }
 });
 
