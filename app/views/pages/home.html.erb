@@ -3,6 +3,15 @@
 <div class="container">
   <% if @projects %>
     <div class="project-zone projects" id="all-projects">
+      <div class="cancel-filter">
+        <%= link_to root_path(anchor: 'all-projects') do %>
+          <i class="far fa-times-circle cancel d-none" id="cancel-search"></i>
+        <% end %>
+      </div>
+      <%= @result %>
+      <%= link_to root_path(anchor: 'all-projects') do %>
+      <%= @clear %>
+        <% end %>
       <div class="cards">
         <% @projects.each do |project| %>
           <% if project.photos.attached? %>

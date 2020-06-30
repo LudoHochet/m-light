@@ -4,6 +4,10 @@ class PagesController < ApplicationController
   def home
     if params[:query].present?
       @projects = Project.search_global(params[:query])
+      @clear = "clear the result"
+      if @projects.count == 0
+        @result = "sorry no result"
+      end
       @projects.each do |project|
         clean_illustrations(project)
       end
