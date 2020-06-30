@@ -14,9 +14,16 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class="content-wrapper">
-      <%= yield %>
-    </div>
-    <%= render 'shared/footer' %>
+    <% if current_page?(new_user_session_path) %>
+      <div class="content-wrapper-logIn">
+        <%= yield %>
+      </div>
+      <%= render 'shared/footer' %>
+    <% else %>
+      <div class="content-wrapper">
+        <%= yield %>
+      </div>
+      <%= render 'shared/footer' %>
+    <% end %>
   </body>
 </html>
