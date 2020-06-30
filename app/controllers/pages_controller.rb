@@ -16,15 +16,27 @@ class PagesController < ApplicationController
       @projects.each do |project|
         clean_illustrations(project)
       end
-      @tvs = Project.where(category: "TV")
-      @fashions = Project.where(category: "Fashion")
-      @events = Project.where(category: "Events")
-      @lives = Project.where(category: "Live")
     end
   end
 
   def contact
     @contact = Contact.new
+  end
+
+  def tv
+    @tvs = Project.where(category: "TV")
+  end
+
+  def event
+    @events = Project.where(category: "Events")
+  end
+
+  def live
+    @lives = Project.where(category: "Live")
+  end
+
+  def fashion
+    @fashions = Project.where(category: "Fashion")
   end
 
   private
