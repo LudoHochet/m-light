@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/contact', to: 'pages#contact'
+  get '/tv', to: 'pages#tv'
+  get '/event', to: 'pages#event'
+  get '/live', to: 'pages#live'
+  get '/fashion', to: 'pages#fashion'
   resources :contacts, only: [:create]
   resources :projects do
     member do
