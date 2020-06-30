@@ -104,16 +104,26 @@
       <% end %>
 
     <% else %>
-    <!-- if there is no photos attached to the project, it means the were delete and replace by possible illustrations -->
+    <!-- if there is no photos attached to the project, it means they were delete and replace by possible illustrations -->
       <!-- display the first photos of the first illustration with photos (clean in the controller) -->
       <div class="carousel-item active">
         <%= cl_image_tag @project.illustrations.first.photos.first.key %>
+        <% if user_signed_in? %>
+          <%= link_to delete_photo_attachment_project_path(@project, @project.illustrations.first, photos.first), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+            <i class="far fa-times-circle delete-photo"></i>
+          <% end %>
+        <% end %>
       </div>
       <!-- display the possible other photos of the first illustration -->
       <% @project.illustrations.first.photos.drop(1).each do |photo| %>
         <div class="carousel-item">
           <div class="show-image">
             <%= cl_image_tag photo.key %>
+            <% if user_signed_in? %>
+              <%= link_to delete_photo_attachment_project_illustration_path(@project, @project.illustration.first, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+                <i class="far fa-times-circle delete-photo"></i>
+              <% end %>
+            <% end %>
           </div>
         </div>
       <% end %>
@@ -123,6 +133,11 @@
           <div class="carousel-item">
             <div class="show-image">
               <%= cl_image_tag photo.key %>
+              <% if user_signed_in? %>
+                <%= link_to delete_photo_attachment_project_path(@project, illustration, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+                  <i class="far fa-times-circle delete-photo"></i>
+                <% end %>
+              <% end %>
             </div>
           </div>
         <% end %>
