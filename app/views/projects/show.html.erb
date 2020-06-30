@@ -109,7 +109,7 @@
       <div class="carousel-item active">
         <%= cl_image_tag @project.illustrations.first.photos.first.key %>
         <% if user_signed_in? %>
-          <%= link_to delete_photo_attachment_project_path(@project, @project.illustrations.first, photos.first), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+          <%= link_to delete_photo_attachment_project_illustration_path(@project, @project.illustrations.first, @project.illustrations.first.photos.first), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
             <i class="far fa-times-circle delete-photo"></i>
           <% end %>
         <% end %>
@@ -120,7 +120,7 @@
           <div class="show-image">
             <%= cl_image_tag photo.key %>
             <% if user_signed_in? %>
-              <%= link_to delete_photo_attachment_project_illustration_path(@project, @project.illustration.first, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+              <%= link_to delete_photo_attachment_project_illustration_path(@project, @project.illustrations.first, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
                 <i class="far fa-times-circle delete-photo"></i>
               <% end %>
             <% end %>
@@ -134,7 +134,7 @@
             <div class="show-image">
               <%= cl_image_tag photo.key %>
               <% if user_signed_in? %>
-                <%= link_to delete_photo_attachment_project_path(@project, illustration, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+                <%= link_to delete_photo_attachment_project_illustration_path(@project, illustration, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
                   <i class="far fa-times-circle delete-photo"></i>
                 <% end %>
               <% end %>
