@@ -25,6 +25,7 @@ class PagesController < ApplicationController
 
   def tv
     @tvs = Project.where(category: "TV")
+    @contact = Contact.new
   end
 
   def event
@@ -41,7 +42,7 @@ class PagesController < ApplicationController
 
   private
 
-    def clean_illustrations(project)
+  def clean_illustrations(project)
     project.illustrations.each do |illustration|
       if illustration.photos.attached? == false
         illustration.destroy

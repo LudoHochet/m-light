@@ -3,11 +3,11 @@
 <div class="container">
   <% if @projects %>
     <div class="project-zone projects" id="all-projects">
-      <div class="cancel-filter">
-        <%= link_to root_path(anchor: 'all-projects') do %>
-          <i class="far fa-times-circle cancel d-none" id="cancel-search"></i>
-        <% end %>
-      </div>
+      <!-- <div class="cancel-filter"> -->
+        <%#= link_to root_path(anchor: 'all-projects') do %>
+          <!-- <i class="far fa-times-circle cancel d-none" id="cancel-search"></i> -->
+        <%# end %>
+      <!-- </div> -->
       <%= @result %>
       <%= link_to root_path(anchor: 'all-projects') do %>
       <%= @clear %>
@@ -61,233 +61,16 @@
     </div> <!-- </div>de project-zone -->
   <% end %>
   <!-- ----------------------------------------- -->
-  <% if @tvs %>
-    <div class="project-zone result tvs d-none">
-      <div class="cancel-filter">
-        <%= link_to root_path(anchor: 'all-projects') do %>
-          <i class="far fa-times-circle cancel d-none" id="cancel-tvs"></i>
-        <% end %>
-      </div>
-    <div class="cards">
-      <% @tvs.each do |project| %>
-      <% if project.photos.attached? %>
-        <div class="entire-card">
-          <%= link_to project_path(project) do %>
-            <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path project.photos.first.key %>');">
-              <p class="project-name"><%= project.name %></p>
-            </div>
-          <% end %>
-          <% if user_signed_in? %>
-            <%= link_to project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} do %>
-              <i class="far fa-times-circle delete-project"></i>
-            <% end %>
-          <% end %>
-        </div>
-      <% else %>
-        <% if project.illustrations.any? %>
-          <div class="entire-card">
-            <%= link_to project_path(project) do %>
-              <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path project.illustrations.first.photos.first.key %>');">
-                <p class="project-name"><%= project.name %></p>
-              </div>
-            <% end %>
-            <% if user_signed_in? %>
-              <%= link_to project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} do %>
-                <i class="far fa-times-circle delete-project"></i>
-              <% end %>
-            <% end %>
-          </div>
-        <% else %>
-          <div class="entire-card">
-            <%= link_to project_path(project) do %>
-              <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1544981037-82284dcf0a0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);">
-                <p class="project-name"><%= project.name %></p>
-              </div>
-            <% end %>
-            <% if user_signed_in? %>
-              <%= link_to project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} do %>
-                <i class="far fa-times-circle delete-project"></i>
-              <% end %>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
-    <% end %>
-    </div>
-  </div>
-  <% end %>
 
   <!-- ------------------------------------- -->
 
-  <% if @lives %>
-    <div class="project-zone result lives d-none">
-      <div class="cancel-filter">
-        <%= link_to root_path(anchor: 'all-projects') do %>
-          <i class="far fa-times-circle cancel d-none" id="cancel-lives"></i>
-        <% end %>
-      </div>
-    <div class="cards">
-      <% @lives.each do |project| %>
-      <% if project.photos.attached? %>
-        <div class="entire-card">
-          <%= link_to project_path(project) do %>
-            <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path project.photos.first.key %>');">
-              <p class="project-name"><%= project.name %></p>
-            </div>
-          <% end %>
-          <% if user_signed_in? %>
-            <%= link_to project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} do %>
-              <i class="far fa-times-circle delete-project"></i>
-            <% end %>
-          <% end %>
-        </div>
-      <% else %>
-        <% if project.illustrations.any? %>
-          <div class="entire-card">
-            <%= link_to project_path(project) do %>
-              <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path project.illustrations.first.photos.first.key %>');">
-                <p class="project-name"><%= project.name %></p>
-              </div>
-            <% end %>
-            <% if user_signed_in? %>
-              <%= link_to project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} do %>
-                <i class="far fa-times-circle delete-project"></i>
-              <% end %>
-            <% end %>
-          </div>
-        <% else %>
-          <div class="entire-card">
-            <%= link_to project_path(project) do %>
-              <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1544981037-82284dcf0a0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);">
-                <p class="project-name"><%= project.name %></p>
-              </div>
-            <% end %>
-            <% if user_signed_in? %>
-              <%= link_to project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} do %>
-                <i class="far fa-times-circle delete-project"></i>
-              <% end %>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
-    <% end %>
-    </div>
-  </div>
-  <% end %>
+
 
   <!-- -------------------------------------------- -->
-  <% if @events %>
-    <div class="project-zone result events d-none">
-      <div class="cancel-filter">
-        <%= link_to root_path(anchor: 'all-projects') do %>
-          <i class="far fa-times-circle cancel d-none" id="cancel-events"></i>
-        <% end %>
-      </div>
-    <div class="cards">
-      <% @events.each do |project| %>
-      <% if project.photos.attached? %>
-        <div class="entire-card">
-          <%= link_to project_path(project) do %>
-            <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path project.photos.first.key %>');">
-              <p class="project-name"><%= project.name %></p>
-            </div>
-          <% end %>
-          <% if user_signed_in? %>
-            <%= link_to project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} do %>
-              <i class="far fa-times-circle delete-project"></i>
-            <% end %>
-          <% end %>
-        </div>
-      <% else %>
-        <% if project.illustrations.any? %>
-          <div class="entire-card">
-            <%= link_to project_path(project) do %>
-              <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path project.illustrations.first.photos.first.key %>');">
-                <p class="project-name"><%= project.name %></p>
-              </div>
-            <% end %>
-            <% if user_signed_in? %>
-              <%= link_to project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} do %>
-                <i class="far fa-times-circle delete-project"></i>
-              <% end %>
-            <% end %>
-          </div>
-        <% else %>
-          <div class="entire-card">
-            <%= link_to project_path(project) do %>
-              <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1544981037-82284dcf0a0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);">
-                <p class="project-name"><%= project.name %></p>
-              </div>
-            <% end %>
-            <% if user_signed_in? %>
-              <%= link_to project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} do %>
-                <i class="far fa-times-circle delete-project"></i>
-              <% end %>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
-    <% end %>
-    </div>
-  </div>
-  <% end %>
+
   <!-- ----------------------------------------------- -->
 
-  <% if @fashions %>
-    <div class="project-zone result fashions d-none">
-      <div class="cancel-filter">
-        <%= link_to root_path(anchor: 'all-projects') do %>
-          <i class="far fa-times-circle cancel d-none" id="cancel-fashions"></i>
-        <% end %>
-      </div>
-    <div class="cards">
-      <% @fashions.each do |project| %>
-      <% if project.photos.attached? %>
-        <div class="entire-card">
-          <%= link_to project_path(project) do %>
-            <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path project.photos.first.key %>');">
-              <p class="project-name"><%= project.name %></p>
-            </div>
-          <% end %>
-          <% if user_signed_in? %>
-            <%= link_to project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} do %>
-              <i class="far fa-times-circle delete-project"></i>
-            <% end %>
-          <% end %>
-        </div>
-      <% else %>
-        <% if project.illustrations.any? %>
-          <div class="entire-card">
-            <%= link_to project_path(project) do %>
-              <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path project.illustrations.first.photos.first.key %>');">
-                <p class="project-name"><%= project.name %></p>
-              </div>
-            <% end %>
-            <% if user_signed_in? %>
-              <%= link_to project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} do %>
-                <i class="far fa-times-circle delete-project"></i>
-              <% end %>
-            <% end %>
-          </div>
-        <% else %>
-          <div class="entire-card">
-            <%= link_to project_path(project) do %>
-              <div class="card-project draw" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1544981037-82284dcf0a0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);">
-                <p class="project-name"><%= project.name %></p>
-              </div>
-            <% end %>
-            <% if user_signed_in? %>
-              <%= link_to project_path(project), method: :delete, data: {confirm: "certain de vouloir supprimer ce projet?"} do %>
-                <i class="far fa-times-circle delete-project"></i>
-              <% end %>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
-    <% end %>
-    </div>
-  </div>
-  <% end %>
+
 
 
 </div> <!-- end of container -->

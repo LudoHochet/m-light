@@ -45,22 +45,12 @@ document.addEventListener('turbolinks:load', () => {
   revealName();
   revealAddPhotos();
   lightCards();
-  filterByTv();
-  filterByLive();
-  filterByFashion();
-  filterByEvent();
+  // filterByTv();
+  // filterByLive();
+  // filterByFashion();
+  // filterByEvent();
   initUpdateNavbarOnScroll();
   revealSearch();
   searchAutofocus();
-  const search = document.getElementById('test');
-  if (search) {
-    console.log("floyd");
-    // search.addEventListener('focus', (event) => {
-    //   // event.preventDefault();
-    //   console.log("coucou");
-    //   const cancelSearch = document.getElementById('cancel-search');
-    //   cancelSearch.classList.remove('d-none');
-    // });
-  }
 });
 
