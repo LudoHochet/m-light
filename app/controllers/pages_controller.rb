@@ -23,6 +23,10 @@ class PagesController < ApplicationController
     @contact = Contact.new
   end
 
+  def about
+
+  end
+
   def tv
     @tvs = Project.where(category: "TV")
     @contact = Contact.new

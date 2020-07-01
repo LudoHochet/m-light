@@ -20,7 +20,7 @@
     </div>
   </div>
 
-<% else %>
+<% elsif current_page?(contact_path) || current_page?(about_path) %>
     <div class="navbar-mlight bg-black d-flex align-items-center fixed-top">
     <!-- first element of flexbox -->
     <div class="flex-item">
@@ -42,8 +42,27 @@
     </div>
   </div>
 
+<% else %>
+  <div class="navbar-mlight bg-black d-flex align-items-center fixed-top">
+    <!-- first element of flexbox -->
+    <div class="flex-item">
+      <div class="logo d-flex align-items-center">
+        <%= link_to "M-Light", root_path %>
+      </div>
+    </div>
 
+    <!-- second element of flexbox -->
+    <div class="flex-item">
+      <div class="filter-category d-inline-flex justify-content-center">
+       <%= render 'shared/filter' %>
+      </div>
+    </div>
 
+    <!-- third element of flexbox -->
+    <div class="flex-item">
+      <%= render 'shared/menu' %>
+    </div>
+  </div>
 <% end %>
 
 

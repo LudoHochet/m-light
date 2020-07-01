@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/contact', to: 'pages#contact'
+  get '/about', to: 'pages#about'
   get '/tv', to: 'pages#tv'
   get '/event', to: 'pages#event'
   get '/live', to: 'pages#live'
