@@ -41,9 +41,6 @@ class ProjectsController < ApplicationController
     redirect_to project_path(@project), notice: 'Photo supprimée'
   end
 
-# array1 = projet.photos.map { |photo| photo}
-# array2 = projet.illustrations.map { |illustration| illustration.photos.map{|photo| photo}}.flatten
-  # @all_photos = array1.concat(array2)
   private
 
   def clean_illustrations(project)
