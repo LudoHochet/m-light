@@ -85,6 +85,19 @@
         <div class="carousel-item">
           <div class="show-image">
             <%= cl_image_tag photo.key %>
+            <% if user_signed_in? %>
+          <% if @all_photos.first.record_type == "Project" %>
+            <%= link_to delete_photo_attachment_project_path(@project, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+              <!-- <i class="far fa-times-circle delete-photo"></i> -->
+              <p>project</p>
+            <% end %>
+          <% else %>
+            <%= link_to delete_photo_attachment_project_illustration_path(@project, Illustration.where(id: all_photos.last.record_id), photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+              <!-- <i class="far fa-times-circle delete-photo"></i> -->
+              <p>illustration</p>
+            <% end %>
+          <% end %>
+        <% end %>
             <%#= cl_image_tag photo.key %>
             <%# if user_signed_in? %>
               <%#= link_to delete_photo_attachment_project_path(@project, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
@@ -120,9 +133,9 @@
       <!-- <div class="carousel-item active"> -->
         <%#= cl_image_tag @project.illustrations.first.photos.first.key %>
         <%# if user_signed_in? %>
-          <%= link_to delete_photo_attachment_project_illustration_path(@project, @project.illustrations.first, @project.illustrations.first.photos.first), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
-            <i class="far fa-times-circle delete-photo"></i>
-          <% end %>
+          <%#= link_to delete_photo_attachment_project_illustration_path(@project, @project.illustrations.first, @project.illustrations.first.photos.first), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+            <!-- <i class="far fa-times-circle delete-photo"></i> -->
+          <%# end %>
         <%# end %>
       <!-- </div> -->
       <!-- display the possible other photos of the first illustration -->
