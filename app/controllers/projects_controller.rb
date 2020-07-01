@@ -18,6 +18,7 @@ class ProjectsController < ApplicationController
   def show
     @illustration = Illustration.new
     clean_illustrations(@project)
+    @all_photos = get_all_photos(@project)
     @count_photos = photos_count(@project)
   end
 
@@ -40,6 +41,9 @@ class ProjectsController < ApplicationController
     redirect_to project_path(@project), notice: 'Photo supprimée'
   end
 
+# array1 = projet.photos.map { |photo| photo}
+# array2 = projet.illustrations.map { |illustration| illustration.photos.map{|photo| photo}}.flatten
+  # @all_photos = array1.concat(array2)
   private
 
   def clean_illustrations(project)
@@ -48,6 +52,12 @@ class ProjectsController < ApplicationController
         illustration.destroy
       end
     end
+  end
+
+  def get_all_photos(project)
+    project_photos = project.photos.map { |photo| photo }
+    illustration_photos = project.illustrations.map { |illustration| illustration.photos.map {|photo| photo}}.flatten
+    all_photos = project_photos.concat(illustration_photos)
   end
 
   def photos_count(project)
