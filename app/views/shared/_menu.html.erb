@@ -16,8 +16,16 @@
   </div>
   <!-- end search zone -->
 
-  <p><%= link_to "About Us", contact_path, class:"links ml-3" %></p>
-  <p><%= link_to "Contact", contact_path, class:"links ml-3" %></p>
+  <% if current_page?(about_path) %>
+    <p><%= link_to "About Us", about_path, class:"links ml-3 active-filter" %></p>
+  <% else %>
+    <p><%= link_to "About Us", about_path, class:"links ml-3" %></p>
+  <% end %>
+  <% if current_page?(contact_path) %>
+    <p><%= link_to "Contact", contact_path, class:"links ml-3 active-filter" %></p>
+  <% else %>
+    <p><%= link_to "Contact", contact_path, class:"links ml-3" %></p>
+  <% end %>
 
   <div class="icon-session ml-3">
     <i class="fas fa-bars dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>

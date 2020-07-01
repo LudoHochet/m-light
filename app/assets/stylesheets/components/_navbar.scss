@@ -13,6 +13,11 @@
   border-bottom: 1px solid white;
 }
 
+.active-filter {
+  color: rgba(255,255,255,1) !important;
+  opacity: 1 !important;
+}
+
 .logo a {
   // font-family: 'Kaushan Script', cursive;
   font-family: 'Staatliches', cursive;
