@@ -4,27 +4,24 @@
     <div class="contact-list">
       <h2>Keep in touch</h2>
     </div>
-    <div>
+    <div class="form-contact">
       <%= simple_form_for @contact  do |f| %>
-        <div class="row">
-          <div class="col-xs-12 col-sm-4">
+        <!-- <div class="row"> -->
+          <!-- <div class="col-xs-12 col-sm-4"> -->
             <div class="form-group">
               <i class="fas fa-user placeholder"></i>
-              <%= f.input :first_name, placeholder:"first_name", class: "form-control"%>
+              <%= f.input :name, placeholder:"your name", class: "form-control"%>
             </div>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <div class="form-group">
-              <%= f.input :last_name, placeholder:"last_name", class: "form-control"%>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-4">
+          <!-- </div> -->
+        <!-- </div> -->
+        <!-- <div class="row"> -->
+          <!-- <div class="col-xs-12 col-sm-4"> -->
             <div class="form-group">
               <i class="fas fa-envelope placeholder"></i>
-              <%= f.input :email, required: true, placeholder: "email", class: "form-control" %>
+              <%= f.input :email, required: true, placeholder: "your email", class: "form-control" %>
             </div>
-          </div>
-        </div>
+          <!-- </div> -->
+        <!-- </div> -->
         <div class="form-group" >
           <!-- <i class="fas fa-envelope"></i> -->
           <i class="fas fa-pen placeholder"></i>
