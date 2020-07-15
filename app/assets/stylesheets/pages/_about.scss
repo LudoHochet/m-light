@@ -7,20 +7,27 @@
   flex:1;
   border: 1px solid white;
   transition:
-    font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
-    flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11);
-}
-.about-item h2 {
-  text-align: center;
+    font-size 1s,
+    flex 0.7s;
+    // flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+    &:hover {
+      cursor: pointer;
+    }
 }
 
-.content {
-  display: none;
+.about-item h2 {
+  margin-bottom: 0;
 }
 
 .light h2 {
   opacity: 0.6;
   font-size: 1rem;
+}
+
+.light {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-item.open {

@@ -1,8 +1,8 @@
 <div class="container mt-3">
   <div class="d-flex about">
-    <div class="us about-item d-flex align-items-center justify-content-center">
-      <h2>us</h2>
-      <div class="content">
+    <div class="us about-item">
+      <h2 class="d-flex align-items-center justify-content-center">us</h2>
+      <div class="content d-none">
         <div class="presentation">
           <p>M-Light was born from a desire to pool various technical and artistic know-how, in the field of lighting in all its forms and in all places</p>
           <p>With our experience in environments such as theater, concerts, events or television, we want to bring the best to your light, video and sound events</p>
@@ -16,8 +16,8 @@
       </div>
     </div>
     <div class="services about-item">
-      <h2>services</h2>
-      <div class="content">
+      <h2 class="d-flex align-items-center justify-content-center">services</h2>
+      <div class="content d-none">
         <p>anxious to best meet your expectations, we provide you with a design office.
         We carry out your light, sound and video events with the services of our partners and technicians</p>
         <p>we offer you:</p>
@@ -34,8 +34,8 @@
       </div>
     </div>
     <div class="3D about-item">
-      <h2>M-3D</h2>
-      <div class="content">
+      <h2 class="d-flex align-items-center justify-content-center">M-3D</h2>
+      <div class="content d-none">
         <p>thanks to this new modeling technique, the scanner emits laser rays, which in contact with the object, are reflected towards the base</p>
         <p>surfaces are measured to the nearest centimeter, due to the phase shift between the rays emitted and the rays received</p>
         <p>with its ultra portable design, we can scan your place, without needing to close it or disturb your activity</p>
@@ -52,16 +52,20 @@
   <script>
     const items = document.querySelectorAll('.about-item');
 
-
     items.forEach((item) => {
       item.addEventListener('click', (event) => {
         items.forEach((block) => {
           block.classList.remove('open');
           block.classList.add('light');
+          const contents = document.querySelectorAll('.content');
+          contents.forEach((content) => {
+            content.classList.add('d-none');
+          })
         })
         event.currentTarget.classList.add('open');
         event.currentTarget.classList.remove('light');
-        console.log(event.currentTarget.lastChild);
+        // event.currentTarget.children.classList.remove('d-none');
+        event.currentTarget.children[event.currentTarget.children.length - 1].classList.remove('d-none');
       });
     })
 
