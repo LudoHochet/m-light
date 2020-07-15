@@ -1,44 +1,75 @@
 <div class="container mt-3">
   <div class="d-flex about">
-    <div class="us">
+    <div class="us about-item d-flex align-items-center justify-content-center">
       <h2>us</h2>
-      <div class="presentation">
-        <p>M-Light was born from a desire to pool various technical and artistic know-how, in the field of lighting in all its forms and in all places</p>
-        <p>With our experience in environments such as theater, concerts, events or television, we want to bring the best to your light, video and sound events</p>
-        <p><span>To respond to your request, our teams are there</span></p>
+      <div class="content">
+        <div class="presentation">
+          <p>M-Light was born from a desire to pool various technical and artistic know-how, in the field of lighting in all its forms and in all places</p>
+          <p>With our experience in environments such as theater, concerts, events or television, we want to bring the best to your light, video and sound events</p>
+          <p><span>To respond to your request, our teams are there</span></p>
+        </div>
+        <p>exploiting new lighting, media servers and 3D rendering software, we will be able to highlight our skills and know-how in your area of activity</p>
+        <p>Our sound, light and video equipment will be made available to you according to your needs (sale and / or rental)</p>
+        <p>We carry out plans on 2D and 3D scale with a light and sound design, by offering you a scenography work</p>
+        <p>Using an innovative concept, we create stage plans to the nearest centimeter thanks to an instrument analyzing scenes and places in 3D</p>
+        <p>Therefore, we can make detailed plans of your stages with a very realistic rendering</p>
       </div>
-      <p>exploiting new lighting, media servers and 3D rendering software, we will be able to highlight our skills and know-how in your area of activity</p>
-      <p>Our sound, light and video equipment will be made available to you according to your needs (sale and / or rental)</p>
-      <p>We carry out plans on 2D and 3D scale with a light and sound design, by offering you a scenography work</p>
-      <p>Using an innovative concept, we create stage plans to the nearest centimeter thanks to an instrument analyzing scenes and places in 3D</p>
-      <p>Therefore, we can make detailed plans of your stages with a very realistic rendering</p>
     </div>
-    <div class="services">
+    <div class="services about-item">
       <h2>services</h2>
-      <p>anxious to best meet your expectations, we provide you with a design office.
-      We carry out your light, sound and video events with the services of our partners and technicians</p>
-      <p>we offer you:</p>
-      <ul>
-        <li>design office</li>
-        <li>light plans</li>
-        <li>equipment rentals</li>
-        <li>sale of materials and consumables</li>
-        <li>installation of equipment</li>
-        <li>technical preparation</li>
-        <li>3D capture of places</li>
-        <li>qualified technicians</li>
-      </ul>
-      <h4>Rendus 2D</h4>
+      <div class="content">
+        <p>anxious to best meet your expectations, we provide you with a design office.
+        We carry out your light, sound and video events with the services of our partners and technicians</p>
+        <p>we offer you:</p>
+        <ul>
+          <li>design office</li>
+          <li>light plans</li>
+          <li>equipment rentals</li>
+          <li>sale of materials and consumables</li>
+          <li>installation of equipment</li>
+          <li>technical preparation</li>
+          <li>3D capture of places</li>
+          <li>qualified technicians</li>
+        </ul>
+      </div>
     </div>
-    <div class="3D">
-      <h2>Technologie M-3D</h2>
-      <p>thanks to this new modeling technique, the scanner emits laser rays, which in contact with the object, are reflected towards the base</p>
-      <p>surfaces are measured to the nearest centimeter, due to the phase shift between the rays emitted and the rays received</p>
-      <p>with its ultra portable design, we can scan your place, without needing to close it or disturb your activity</p>
-      <p>it allows us to better meet your expectations thanks to time savings, more precision and uniformity of plans</p>
-      <p>no more erroneous plans, imprecise tracking, logistical errors</p>
-      <p> <span>Your plans in dwg, wyg or pdf. We have the solution</span> </p>
-      <h4>Rendus 3D</h4>
+    <div class="3D about-item">
+      <h2>M-3D</h2>
+      <div class="content">
+        <p>thanks to this new modeling technique, the scanner emits laser rays, which in contact with the object, are reflected towards the base</p>
+        <p>surfaces are measured to the nearest centimeter, due to the phase shift between the rays emitted and the rays received</p>
+        <p>with its ultra portable design, we can scan your place, without needing to close it or disturb your activity</p>
+        <p>it allows us to better meet your expectations thanks to time savings, more precision and uniformity of plans</p>
+        <p>no more erroneous plans, imprecise tracking, logistical errors</p>
+        <p> <span>Your plans in dwg, wyg or pdf.We have the solution</span> </p>
+        <h6>Rendus 3D</h6>
+        <h6>Rendus 2D</h6>
+      </div>
     </div>
   </div>
 </div>
+
+  <script>
+    const items = document.querySelectorAll('.about-item');
+
+
+    items.forEach((item) => {
+      item.addEventListener('click', (event) => {
+        items.forEach((block) => {
+          block.classList.remove('open');
+          block.classList.add('light');
+        })
+        event.currentTarget.classList.add('open');
+        event.currentTarget.classList.remove('light');
+        console.log(event.currentTarget.lastChild);
+      });
+    })
+
+    // panels.forEach((panel) => {
+    //   panel.addEventListener('transitionend', (event) => {
+    //     if (event.propertyName.includes('flex')) {
+    //       panel.classList.toggle('open-active');
+    //     }
+    //   });
+    // });
+  </script>
