@@ -34,6 +34,7 @@ import { filterByEvent } from '../components/filter_category';
 import { initUpdateNavbarOnScroll } from '../components/init_navbar';
 import { revealSearch } from '../components/reveal_search';
 import { searchAutofocus } from '../components/search_autofocus';
+import { resizeFlex } from '../components/size_flex';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -52,5 +53,6 @@ document.addEventListener('turbolinks:load', () => {
   initUpdateNavbarOnScroll();
   revealSearch();
   searchAutofocus();
+  resizeFlex();
 });
 

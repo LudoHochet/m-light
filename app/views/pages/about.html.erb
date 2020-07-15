@@ -1,8 +1,8 @@
 <div class="container mt-3">
   <div class="d-flex about">
-    <div class="us about-item">
+    <div class="us about-item open">
       <h2 class="d-flex align-items-center justify-content-center">us</h2>
-      <div class="content d-none">
+      <div class="content">
         <div class="presentation">
           <p>M-Light was born from a desire to pool various technical and artistic know-how, in the field of lighting in all its forms and in all places</p>
           <p>With our experience in environments such as theater, concerts, events or television, we want to bring the best to your light, video and sound events</p>
@@ -15,7 +15,7 @@
         <p>Therefore, we can make detailed plans of your stages with a very realistic rendering</p>
       </div>
     </div>
-    <div class="services about-item">
+    <div class="services about-item light">
       <h2 class="d-flex align-items-center justify-content-center">services</h2>
       <div class="content d-none">
         <p>anxious to best meet your expectations, we provide you with a design office.
@@ -33,7 +33,7 @@
         </ul>
       </div>
     </div>
-    <div class="3D about-item">
+    <div class="3D about-item light">
       <h2 class="d-flex align-items-center justify-content-center">M-3D</h2>
       <div class="content d-none">
         <p>thanks to this new modeling technique, the scanner emits laser rays, which in contact with the object, are reflected towards the base</p>
@@ -49,31 +49,4 @@
   </div>
 </div>
 
-  <script>
-    const items = document.querySelectorAll('.about-item');
 
-    items.forEach((item) => {
-      item.addEventListener('click', (event) => {
-        items.forEach((block) => {
-          block.classList.remove('open');
-          block.classList.add('light');
-          const contents = document.querySelectorAll('.content');
-          contents.forEach((content) => {
-            content.classList.add('d-none');
-          })
-        })
-        event.currentTarget.classList.add('open');
-        event.currentTarget.classList.remove('light');
-        // event.currentTarget.children.classList.remove('d-none');
-        event.currentTarget.children[event.currentTarget.children.length - 1].classList.remove('d-none');
-      });
-    })
-
-    // panels.forEach((panel) => {
-    //   panel.addEventListener('transitionend', (event) => {
-    //     if (event.propertyName.includes('flex')) {
-    //       panel.classList.toggle('open-active');
-    //     }
-    //   });
-    // });
-  </script>
