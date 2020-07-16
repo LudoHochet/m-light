@@ -8,10 +8,14 @@
           <!-- <i class="far fa-times-circle cancel d-none" id="cancel-search"></i> -->
         <%# end %>
       <!-- </div> -->
-      <%= @result %>
-      <%= link_to root_path(anchor: 'all-projects') do %>
-      <%= @clear %>
+      <% if @no_result %>
+        <p>Sorry, no results</p>
+      <% end %>
+      <% if @clear %>
+        <%= link_to root_path(anchor: 'all-projects') do %>
+          <i class="far fa-times-circle"></i>
         <% end %>
+      <% end %>
       <div class="cards">
         <% @projects.each do |project| %>
           <% if project.photos.attached? %>

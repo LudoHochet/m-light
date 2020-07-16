@@ -4,9 +4,9 @@ class PagesController < ApplicationController
   def home
     if params[:query].present?
       @projects = Project.search_global(params[:query])
-      @clear = "clear the result"
+      @clear = true
       if @projects.count == 0
-        @result = "sorry no result"
+        @no_result = true
       end
       @projects.each do |project|
         clean_illustrations(project)
@@ -29,19 +29,22 @@ class PagesController < ApplicationController
 
   def tv
     @tvs = Project.where(category: "TV")
-    @contact = Contact.new
+    @clear = true
   end
 
   def event
     @events = Project.where(category: "Events")
+    @clear = true
   end
 
   def live
     @lives = Project.where(category: "Live")
+    @clear = true
   end
 
   def fashion
     @fashions = Project.where(category: "Fashion")
+    @clear = true
   end
 
   private

@@ -1,6 +1,11 @@
 <div class="container">
   <% if @fashions %>
     <div class="project-zone result fashions">
+      <% if @clear %>
+        <%= link_to root_path(anchor: 'all-projects') do %>
+          <i class="far fa-times-circle"></i>
+        <% end %>
+      <% end %>
       <div class="cancel-filter">
         <%= link_to root_path(anchor: 'all-projects') do %>
           <i class="far fa-times-circle cancel d-none" id="cancel-fashions"></i>
