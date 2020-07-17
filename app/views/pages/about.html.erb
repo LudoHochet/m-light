@@ -36,22 +36,27 @@
     <div class="about-item light">
       <h2 class="d-flex align-items-center justify-content-center">M-3D</h2>
       <div class="content border-fx-black d-none">
-        <p>thanks to this new modeling technique, the scanner emits laser rays, which in contact with the object, are reflected towards the base</p>
-        <p>surfaces are measured to the nearest centimeter, due to the phase shift between the rays emitted and the rays received</p>
-        <p>with its ultra portable design, we can scan your place, without needing to close it or disturb your activity</p>
-        <p>it allows us to better meet your expectations thanks to time savings, more precision and uniformity of plans</p>
-        <p>no more erroneous plans, imprecise tracking, logistical errors</p>
-        <p> <span>Your plans in dwg, wyg or pdf.We have the solution</span> </p>
-        <h6>Rendus 3D</h6>
-        <h6>Rendus 2D</h6>
+        <div class="text-3D">
+          <p>thanks to this new modeling technique, the scanner emits laser rays, which in contact with the object, are reflected towards the base</p>
+          <p>surfaces are measured to the nearest centimeter, due to the phase shift between the rays emitted and the rays received</p>
+          <p>with its ultra portable design, we can scan your place, without needing to close it or disturb your activity</p>
+          <p>it allows us to better meet your expectations thanks to time savings, more precision and uniformity of plans</p>
+          <p>no more erroneous plans, imprecise tracking, logistical errors</p>
+          <p> <span>Your plans in dwg, wyg or pdf.We have the solution</span> </p>
+          <h6>Rendus 3D</h6>
+          <h6>Rendus 2D</h6>
+        </div>
+        <div class="carousel-3D d-none">
+          <%= render 'shared/carousel3D' %>
+        </div>
       </div>
     </div>
-    <div class="about-item light">
-      <h2 class="d-flex align-items-center justify-content-center">Rendus 3D</h2>
-      <div class="content border-fx-black d-none">
-        <%= render 'shared/carousel3D' %>
-      </div>
-    </div>
+    <!-- <div class="about-item light"> -->
+      <!-- <h2 class="d-flex align-items-center justify-content-center">Rendus 3D</h2> -->
+      <!-- <div class="content border-fx-black d-none"> -->
+        <%#= render 'shared/carousel3D' %>
+      <!-- </div> -->
+    <!-- </div> -->
   </div>
 </div>
 
