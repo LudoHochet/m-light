@@ -36,6 +36,7 @@ import { revealSearch } from '../components/reveal_search';
 import { searchAutofocus } from '../components/search_autofocus';
 import { resizeFlex } from '../components/size_flex';
 import { displayScroll } from '../components/remove_scroll';
+import { changeTextToCarousel } from '../components/change_content';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -56,5 +57,6 @@ document.addEventListener('turbolinks:load', () => {
   searchAutofocus();
   resizeFlex();
   displayScroll();
+  changeTextToCarousel();
 });
 
