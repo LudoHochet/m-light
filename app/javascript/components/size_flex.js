@@ -7,6 +7,7 @@ const resizeFlex = () => {
         item.addEventListener('click', (event) => {
           items.forEach((block) => {
             // reduit tous les blocks et ajoute la class light
+            // console.log("reduction");
             block.classList.remove('open');
             block.classList.add('light');
             // cache tous les contenus
