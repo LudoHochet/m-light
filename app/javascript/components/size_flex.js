@@ -1,4 +1,3 @@
-const menu3D = document.querySelector('.menu-3D');
 
 const resizeFlex = () => {
   const items = document.querySelectorAll('.about-item');
@@ -14,9 +13,11 @@ const resizeFlex = () => {
             const contents = document.querySelectorAll('.content');
             contents.forEach((content) => {
               content.classList.add('d-none');
-              // if (menu3D) {
+              // cahe le sous contenu menu 3D
+              const menu3D = document.querySelector('.menu-3D');
+              if (menu3D) {
                 menu3D.classList.add('d-none');
-              // }
+              }
             })
           })
           // agrandit la div sur laquelle on a cliqué
