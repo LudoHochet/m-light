@@ -2,18 +2,6 @@ const textContent = document.querySelector('.text-3D');
 const carouselContent = document.querySelector('.carousel-3D');
 const illustrContent = document.querySelector('.content-2D');
 
-// const changeTextToCarousel = () => {
-//   const rendus3D = document.querySelector('.rendus-3D');
-//   if (rendus3D) {
-//     rendus3D.addEventListener('click', () => {
-//       console.log("text to carousel!!")
-//       textContent.classList.add('d-none');
-//       illustrContent.classList.add('d-none');
-//       carouselContent.classList.remove('d-none');
-//     })
-//   }
-// }
-
 const changeContent = () => {
   const back = document.querySelector('.back');
   if (back) {
@@ -44,5 +32,4 @@ const changeContent = () => {
   }
 }
 
-// export { changeTextToCarousel };
 export { changeContent };
