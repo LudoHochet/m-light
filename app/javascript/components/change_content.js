@@ -1,8 +1,8 @@
 const textContent = document.querySelector('.text-3D');
 const carouselContent = document.querySelector('.carousel-3D');
-const rendus3D = document.querySelector('.rendus-3D');
 
 const changeTextToCarousel = () => {
+  const rendus3D = document.querySelector('.rendus-3D');
   if (rendus3D) {
     rendus3D.addEventListener('click', () => {
       console.log("text to carousel!!")
@@ -14,7 +14,6 @@ const changeTextToCarousel = () => {
 
 const changeCarouselToText = () => {
   const back = document.querySelector('.back');
-  console.log("alors???")
   if (back) {
     back.addEventListener('click', () => {
       console.log("carousel to text!!")
