@@ -43,6 +43,10 @@ import { changeContent } from '../components/change_content';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+const textContent = document.querySelector('.text-3D');
+const carouselContent = document.querySelector('.carousel-3D');
+const illustrContent = document.querySelector('.content-2D');
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
