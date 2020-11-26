@@ -61,5 +61,22 @@ document.addEventListener('turbolinks:load', () => {
   displayScroll();
   // changeTextToCarousel();
   changeContent();
+  const divServices = document.getElementById('services');
+  const divUs = document.getElementById('us');
+  const divWork = document.getElementById('work');
+  if(divServices){
+    divServices.addEventListener('click', (event) => {
+      us.scrollIntoView({
+        behavior: "smooth",
+        block: "end"
+      });
+    })
+  }
+  if(divWork) {
+    divWork.addEventListener('click', (event) => {
+      console.log("test");
+      services.scrollIntoView({behavior: "smooth", block: "end"});
+    })
+  }
 });
 
