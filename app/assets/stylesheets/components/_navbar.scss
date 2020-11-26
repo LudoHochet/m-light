@@ -106,9 +106,6 @@
 
 
 @media (max-width: 995px) {
-  .navbar-bbgc img {
-    width: 90px;
-  }
   .new-project {
     display: none;
   }
@@ -118,23 +115,20 @@
 }
 
 @media (max-width: 768px) {
-  .navbar-bbgc img {
-    width: 80px;
-  }
-}
-
-@media (max-width: 576px) {
   .links {
-    display: none;
-  }
-  .activelinks {
     display: none;
   }
   .hidden-links{
     display: block;
   }
-  .navbar-bbgc img {
-    width: 60px;
+}
+
+@media (max-width: 576px) {
+  .logo a {
+    font-size: 15px;
+  }
+  .category  {
+    font-size: 12px;
   }
 }
 
