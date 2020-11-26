@@ -16,11 +16,16 @@
   }
 }
 
+.card-contact {
+  display: flex;
+  justify-content: center;
+}
+
 .contact-list {
   background-color: white;
   color: black;
-  flex-grow: 1;
-  padding: 20px;
+  // flex-grow: 1;
+  padding: 20px 30px;
   border-radius: 5px;
 }
 
@@ -113,4 +118,14 @@ textarea {
   top: 43px;
   color: gray;
   z-index: 99;
+}
+
+
+@media (max-width: 992px) {
+  .card-contact {
+    display: block;
+  }
+  .contact-list {
+    margin: 20px;
+  }
 }
