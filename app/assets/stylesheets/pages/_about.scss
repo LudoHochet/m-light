@@ -1,4 +1,5 @@
 .about {
+  display: flex;
   margin-top: 100px;
   margin-bottom: 50px;
 }
@@ -102,5 +103,14 @@
  opacity: 0.6;
   &:hover {
     opacity: 1;
+  }
+}
+
+@media (max-width: 992px) {
+  .about {
+    flex-direction: column;
+  }
+  .about-item {
+    margin: 10px 0;
   }
 }
