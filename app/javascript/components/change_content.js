@@ -1,8 +1,8 @@
-// const textContent = document.querySelector('.text-3D');
-// const carouselContent = document.querySelector('.carousel-3D');
-// const illustrContent = document.querySelector('.content-2D');
-
 const changeContent = () => {
+  const textContent = document.querySelector('.text-3D');
+  const carouselContent = document.querySelector('.carousel-3D');
+  const illustrContent = document.querySelector('.content-2D');
+
   const back = document.querySelector('.back');
   if (back) {
     back.addEventListener('click', () => {
