@@ -99,11 +99,11 @@
   }
   .banner {
     background-position: center;
-    padding-top: 150px;
+    padding-top: 320px;
     // height: 70vh;
   }
   .scroll {
-    bottom: 50px;
+    bottom: 230px;
   }
   .banner p {
     font-size: 18px;
@@ -111,6 +111,14 @@
   }
 }
 
+@media (max-width: 736px) {
+  .banner {
+    padding-top: 150px;
+  }
+  .scroll {
+    bottom: 50px;
+  }
+}
 
 @media (max-width: 572px) {
   .highlight {
