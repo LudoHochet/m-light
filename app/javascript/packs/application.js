@@ -37,6 +37,7 @@ import { searchAutofocus } from '../components/search_autofocus';
 import { resizeFlex } from '../components/size_flex';
 import { displayScroll } from '../components/remove_scroll';
 import { changeContent } from '../components/change_content';
+import { scrollToDiv } from '../components/scrollToDiv';
 // import { changeCarouselToText } from '../components/change_content';
 // import { changeTextTo2D } from '../components/change_content';
 
@@ -61,22 +62,6 @@ document.addEventListener('turbolinks:load', () => {
   displayScroll();
   // changeTextToCarousel();
   changeContent();
-  const divServices = document.getElementById('services');
-  const divUs = document.getElementById('us');
-  const divWork = document.getElementById('work');
-  if(divServices){
-    divServices.addEventListener('click', (event) => {
-      us.scrollIntoView({
-        behavior: "smooth",
-        block: "end"
-      });
-    })
-  }
-  if(divWork) {
-    divWork.addEventListener('click', (event) => {
-      console.log("test");
-      services.scrollIntoView({behavior: "smooth", block: "end"});
-    })
-  }
+  scrollToDiv();
 });
 
