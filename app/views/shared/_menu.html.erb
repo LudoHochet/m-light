@@ -20,7 +20,7 @@
       <%= form_tag root_path(anchor: 'all-projects'), class:"form-inline d-flex justify-content-center", method: :get do %>
           <div class="form-group d-flex justify-content-center mb-0">
             <%= text_field_tag :query, params[:query], id:"search-input", class: "d-none animated fadeInLeft", placeholder: "find a project" %>
-            <i class="fas fa-search icon-session search-icon"></i>
+            <i class="fas fa-search icon-search d-flex align-items-center"></i>
           </div>
       <% end %>
     </div>

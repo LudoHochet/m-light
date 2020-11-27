@@ -1,5 +1,5 @@
 const revealSearch = () => {
-  const searchIcon = document.querySelector('.search-icon');
+  const searchIcon = document.querySelector('.icon-search');
   const filters = document.querySelector('.filters')
   if (searchIcon) {
     const searchInput = document.getElementById('search-input');
