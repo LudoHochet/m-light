@@ -4,17 +4,27 @@
     <%= link_to "new project", new_project_path, class:"new-project btn-white mr-3" %>
   <% end %>
   <!-- search zone -->
-  <div class="d-flex align-items-center">
-    <%= form_tag root_path(anchor: 'all-projects'), class:"form-inline d-flex justify-content-center md-form form-sm active-pink active-pink-2", method: :get do %>
-      <div class="md-form my-0">
-        <%= text_field_tag :query, params[:query], placeholder: "Find a project", id:"search-input", class:"form-control form-control-sm ml-2 w-77 d-none animated fadeInLeft"%>
-        <%#= submit_tag "Search", class: "btn btn-outline-white btn-md my-0 ml-sm-2" %>
-      <!-- <div class="search"></div> -->
-      </div>
-    <% end %>
-    <i class="fas fa-search icon-session search-icon"></i>
-  </div>
+  <!-- <div class="d-flex align-items-center"> -->
+    <%#= form_tag root_path(anchor: 'all-projects'), class:"form-inline d-flex justify-content-center md-form form-sm active-pink active-pink-2", method: :get do %>
+      <!-- <div class="md-form my-0"> -->
+        <%#= text_field_tag :query, params[:query], placeholder: "Find a project", id:"search-input", class:"form-control form-control-sm ml-2 w-77 d-none animated fadeInLeft"%>
+      <!-- </div> -->
+    <%# end %>
+    <!-- <i class="fas fa-search icon-session search-icon"></i> -->
+  <!-- </div> -->
   <!-- end search zone -->
+
+
+  <!-- test nouveau search -->
+    <div class="search">
+      <%= form_tag root_path(anchor: 'all-projects'), class:"form-inline d-flex justify-content-center", method: :get do %>
+          <div class="form-group d-flex justify-content-center mb-0">
+            <%= text_field_tag :query, params[:query], id:"search-input", class: "d-none animated fadeInLeft", placeholder: "find a project" %>
+            <i class="fas fa-search icon-session search-icon"></i>
+          </div>
+      <% end %>
+    </div>
+  <!-- fin du test -->
 
   <% if current_page?(about_path) %>
     <p><%= link_to "About Us", about_path, class:"links ml-3 active-filter" %></p>
