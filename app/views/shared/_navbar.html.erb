@@ -3,7 +3,9 @@
     <!-- first element of flexbox -->
     <div class="flex-item">
       <div class="logo logoHome d-flex align-items-center animated invisible">
-        <%= link_to "M-Light", root_path %>
+        <%= link_to root_path do %>
+          <%= image_tag  "mini_logo.png"%>
+        <% end %>
       </div>
     </div>
 

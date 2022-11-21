@@ -20,16 +20,20 @@
 
 .logo a {
   // font-family: 'Kaushan Script', cursive;
-  font-family: 'Staatliches', cursive;
-  color: white;
+  // font-family: 'Staatliches', cursive;
+  // color: white;
   opacity: 0.9;
-  font-size: 20px;
+  // font-size: 20px;
   visibility: transition 3s;
   &:hover {
     opacity: 1;
     color: white;
-    text-decoration: none;
+    // text-decoration: none;
   }
+}
+
+.navbar-mlight img {
+  height: 35px;
 }
 
 
