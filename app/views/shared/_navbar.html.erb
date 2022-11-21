@@ -27,8 +27,14 @@
     <!-- first element of flexbox -->
     <div class="flex-item">
       <div class="logo d-flex align-items-center">
-        <%= link_to "M-Light", root_path %>
+        <%= link_to root_path do %>
+          <%= image_tag  "mini_logo.png"%>
+        <% end %>
       </div>
+
+      <!-- <div class="logo d-flex align-items-center">
+        <%= link_to "M-Light", root_path %>
+      </div> -->
     </div>
 
     <!-- second element of flexbox -->
@@ -49,8 +55,13 @@
     <!-- first element of flexbox -->
     <div class="flex-item">
       <div class="logo d-flex align-items-center">
-        <%= link_to "M-Light", root_path %>
+        <%= link_to root_path do %>
+          <%= image_tag  "mini_logo.png"%>
+        <% end %>
       </div>
+      <!-- <div class="logo d-flex align-items-center">
+        <%= link_to "M-Light", root_path %>
+      </div> -->
     </div>
 
     <!-- second element of flexbox -->
