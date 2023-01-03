@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/contact', to: 'pages#contact'
   get '/about', to: 'pages#about'
+  get '/cqlp', to: 'pages#cqlp'
   get '/tv', to: 'pages#tv'
   get '/event', to: 'pages#event'
   get '/live', to: 'pages#live'
