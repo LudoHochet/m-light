@@ -24,7 +24,9 @@ class PagesController < ApplicationController
   end
 
   def about
+  end
 
+  def cqlp
   end
 
   def tv
