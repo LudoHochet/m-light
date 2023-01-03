@@ -30,6 +30,7 @@
     <p><%= link_to "About Us", about_path, class:"links ml-3 active-filter" %></p>
   <% else %>
     <p><%= link_to "About Us", about_path, class:"links ml-3" %></p>
+    <p><%= link_to "CQLP", cqlp_path, class:"links ml-3" %></p>
   <% end %>
   <% if current_page?(contact_path) %>
     <p><%= link_to "Contact", contact_path, class:"links ml-3 active-filter" %></p>
