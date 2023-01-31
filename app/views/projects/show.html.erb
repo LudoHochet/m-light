@@ -21,49 +21,49 @@
   <!-- </div> -->
 
 <!-- carousel -->
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+ <!--  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <% (@count_photos - 1).times do |n|%>
-        <li data-target="#carouselExampleIndicators" data-slide-to="<%= n += 1 %>"></li>
-      <% end %>
+      <%# (@count_photos - 1).times do |n|%>
+        <li data-target="#carouselExampleIndicators" data-slide-to="<%#= n += 1 %>"></li>
+      <%# end %>
     </ol>
-    <div class="carousel-inner">
+    <div class="carousel-inner"> -->
       <!-- first image of the project -->
-      <div class="carousel-item carousel-project active">
-        <%= cl_image_tag @all_photos.first.key %>
-        <% if user_signed_in? %>
-          <% if @all_photos.first.record_type == "Project" %>
-            <%= link_to delete_photo_attachment_project_path(@project, @all_photos.first), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
-              <i class="far fa-times-circle delete-photo"></i>
-            <% end %>
-          <% else %>
-            <%= link_to delete_photo_attachment_project_illustration_path(@project, @project.illustrations.first, @project.illustrations.first.photos.first), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
-              <i class="far fa-times-circle delete-photo"></i>
-            <% end %>
-          <% end %>
-        <% end %>
-      </div>
+      <!-- <div class="carousel-item carousel-project active"> -->
+        <%#= cl_image_tag @all_photos.first.key %>
+        <%# if user_signed_in? %>
+          <%# if @all_photos.first.record_type == "Project" %>
+            <%#= link_to delete_photo_attachment_project_path(@project, @all_photos.first), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+              <!-- <i class="far fa-times-circle delete-photo"></i> -->
+            <%# end %>
+          <%# else %>
+            <%#= link_to delete_photo_attachment_project_illustration_path(@project, @project.illustrations.first, @project.illustrations.first.photos.first), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+              <!-- <i class="far fa-times-circle delete-photo"></i> -->
+            <%# end %>
+          <%# end %>
+        <%# end %>
+      <!-- </div> -->
       <!-- other image of the project less the first one -->
-      <% @all_photos.drop(1).each do |photo| %>
-        <div class="carousel-item carousel-project">
-          <div class="show-image">
-            <%= cl_image_tag photo.key %>
-            <% if user_signed_in? %>
-              <% if photo.record_type == "Project" %>
-                <%= link_to delete_photo_attachment_project_path(@project, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
-                  <i class="far fa-times-circle delete-photo"></i>
-                <% end %>
-              <% else %>
-                <%= link_to delete_photo_attachment_project_illustration_path(@project, photo.record_id.to_i, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
-                  <i class="far fa-times-circle delete-photo"></i>
-                <% end %>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
+      <%# @all_photos.drop(1).each do |photo| %>
+        <!-- <div class="carousel-item carousel-project"> -->
+          <!-- <div class="show-image"> -->
+            <%#= cl_image_tag photo.key %>
+            <%# if user_signed_in? %>
+              <%# if photo.record_type == "Project" %>
+                <%#= link_to delete_photo_attachment_project_path(@project, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+                  <!-- <i class="far fa-times-circle delete-photo"></i> -->
+                <%# end %>
+              <%# else %>
+                <%#= link_to delete_photo_attachment_project_illustration_path(@project, photo.record_id.to_i, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+                  <!-- <i class="far fa-times-circle delete-photo"></i> -->
+                <%# end %>
+              <%# end %>
+            <%# end %>
+         <!--  </div>
+        </div> -->
+      <%# end %>
+    <!-- </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -72,8 +72,25 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
-  </div>
+  </div> -->
 <!-- fin du carousel -->
+
+<% @all_photos.each do |photo| %>
+  <div class="show-image">
+    <%= cl_image_tag photo.key %>
+    <% if user_signed_in? %>
+      <% if photo.record_type == "Project" %>
+        <%= link_to delete_photo_attachment_project_path(@project, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+          <i class="far fa-times-circle delete-photo"></i>
+        <% end %>
+      <% else %>
+        <%= link_to delete_photo_attachment_project_illustration_path(@project, photo.record_id.to_i, photo), method: :delete, data: { confirm: 'Veux-tu vraiment supprimer la photo ?' } do %>
+          <i class="far fa-times-circle delete-photo"></i>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+<%end%>
 
 <% if user_signed_in? %>
   <div class="text-center mt-3">
