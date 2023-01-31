@@ -50,6 +50,10 @@
 .contact-form a {
   text-decoration: none;
   color: $black;
+
+  &:hover{
+    color:#F5BE0B;
+  }
 }
 
 .contact-form p {

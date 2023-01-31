@@ -3,7 +3,7 @@ const displayScroll = () => {
   if (scrollText) {
     window.addEventListener('scroll', () => {
       if (window.scrollY >= 300 ) {
-        console.log("test scroll!!!");
+        // console.log("test scroll!!!");
         scrollText.classList.remove('infinite');
         scrollText.classList.add('fadeOut');
       }
