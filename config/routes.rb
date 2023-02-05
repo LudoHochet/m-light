@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'pages#contact'
   get '/about', to: 'pages#about'
   get '/cqlp', to: 'pages#cqlp'
+  get '/cgv', to: 'pages#cgv'
   get '/tv', to: 'pages#tv'
   get '/event', to: 'pages#event'
   get '/live', to: 'pages#live'
