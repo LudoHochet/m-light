@@ -29,6 +29,9 @@ class PagesController < ApplicationController
   def cqlp
   end
 
+  def cgv
+  end
+
   def tv
     @tvs = Project.where(category: "TV")
     @clear = true
