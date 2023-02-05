@@ -32,12 +32,16 @@
   margin-bottom: 0px;
 }
 
-.madeby {
-  font-size: 12px;
-}
 
-.madeby p {
+.cgv-link {
   margin-bottom: 0px;
+  color: white;
+  opacity: 0.30;
+  &:hover {
+    opacity: 1;
+    color: white;
+    transition: 0.5s;
+  }
 }
 
 .link-pro {
