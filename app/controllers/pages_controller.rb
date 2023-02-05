@@ -12,7 +12,7 @@ class PagesController < ApplicationController
         clean_illustrations(project)
       end
     else
-      @projects = Project.order(created_at:)
+      @projects = Project.order(:created_at)
       # @projects = Project.order(created_at: :desc)
       @projects.each do |project|
         clean_illustrations(project)
