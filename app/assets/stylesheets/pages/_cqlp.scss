@@ -1,5 +1,6 @@
 .cqlp_banner {
   margin-top: 100px;
+  margin-bottom: 100px;
   background-size: cover;
   background-position: center;
   padding: 250px 0;
@@ -32,4 +33,12 @@
   height: 90px !important;
 }
 
+.winner {
+  margin-bottom: 100px;
+}
 
+.winner_img {
+  max-width: 30%;
+  height: auto;
+  object-fit: cover;
+}
